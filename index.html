@@ -96,7 +96,14 @@
     .orbit-art { width: 100%; height: 100%; position: absolute; inset: 0; }
     .orbit-disc { filter: drop-shadow(0 18px 20px #213c2722); }
     .orbit-line { stroke: #657858; stroke-width: .7; fill: none; opacity: .45; }
-    .orbit-tag { font-family: var(--mono); font-size: 10px; letter-spacing: .05em; fill: #40543c; }
+    .orbit-electron { pointer-events: none; filter: drop-shadow(0 0 3px #b9dc76); }
+    .orbit-electron-dot { fill: #e6ffa6; stroke: #6d8752; stroke-width: 1.3; filter: drop-shadow(0 0 4px #a3cb66); }
+    .orbit-trail { fill: none; stroke: #8eaf60; stroke-linecap: round; }
+    .orbit-label { cursor: default; }
+    .orbit-label-connector { fill: none; stroke: #8a9c77; stroke-width: .8; opacity: .6; pointer-events: none; }
+    .orbit-label rect { fill: #f4f6eb; stroke: #aebda0; stroke-width: 1; transition: fill .25s ease, stroke .25s ease, filter .25s ease; }
+    .orbit-tag { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .06em; fill: #40543c; text-anchor: middle; dominant-baseline: central; pointer-events: none; user-select: none; }
+    .orbit-label:hover rect { fill: #e6ffa6; stroke: #8eaf60; filter: drop-shadow(0 0 4px #a3cb66) drop-shadow(0 0 9px #b9dc7680); }
     .art-bottom { position: absolute; left: 25px; right: 25px; bottom: 23px; display: flex; justify-content: space-between; align-items: end; }
     .art-bottom p { font-size: 17px; line-height: 1.35; font-weight: 600; letter-spacing: -.03em; }
     .art-bottom .eyebrow { font-size: 9px; text-align: right; color: #65705e; }
@@ -345,6 +352,7 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition: none !important; }
+      .orbit-trail { display: none; }
     }
     @media print {
       .site-header, .hero-art, .hero-actions, .walkthrough, .copy-email, .to-top { display: none !important; }
@@ -408,22 +416,38 @@
               <linearGradient id="check" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e6ffa6"/><stop offset="1" stop-color="#b9dc76"/></linearGradient>
             </defs>
             <g transform="translate(280 236)">
-              <circle class="orbit-line" r="170"/>
+              <circle class="orbit-line" id="orbit-outer" r="170"/>
               <circle class="orbit-line" r="133" stroke-dasharray="2 5"/>
-              <ellipse class="orbit-line" rx="210" ry="92" transform="rotate(-32)"/>
-              <ellipse class="orbit-line" rx="210" ry="92" transform="rotate(32)"/>
+              <ellipse class="orbit-line" id="orbit-left" rx="210" ry="92" transform="rotate(-32)"/>
+              <ellipse class="orbit-line" id="orbit-right" rx="210" ry="92" transform="rotate(32)"/>
               <path class="orbit-line" d="M-222 0h444M0-183v366" stroke-dasharray="3 6"/>
               <g class="orbit-disc">
                 <circle r="86" fill="url(#disc)" stroke="#4f6e48" stroke-width="1"/>
                 <circle r="76" fill="none" stroke="#94ae763d" stroke-width=".7"/>
                 <path d="m-32 0 21 23 44-49" fill="none" stroke="url(#check)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
               </g>
-              <g transform="translate(-147 -94)"><rect x="-29" y="-17" width="58" height="34" rx="17" fill="#f4f6eb" stroke="#aebda0"/><text class="orbit-tag" text-anchor="middle" y="4">UI</text></g>
-              <g transform="translate(153 -78)"><rect x="-29" y="-17" width="58" height="34" rx="17" fill="#f4f6eb" stroke="#aebda0"/><text class="orbit-tag" text-anchor="middle" y="4">API</text></g>
-              <g transform="translate(26 168)"><rect x="-29" y="-17" width="58" height="34" rx="17" fill="#d6f284" stroke="#a2b88b"/><text class="orbit-tag" text-anchor="middle" y="4">CI</text></g>
-              <circle cx="-174" cy="84" r="4" fill="#829666" stroke="#e8ecdf" stroke-width="3"/>
-              <circle cx="128" cy="114" r="4" fill="#829666" stroke="#e8ecdf" stroke-width="3"/>
-              <circle cx="26" cy="-168" r="4" fill="#829666" stroke="#e8ecdf" stroke-width="3"/>
+              <g class="orbit-electron" data-track="orbit-left" data-phase="0.4" data-direction="1">
+                <circle class="orbit-electron-dot" cx="-174" cy="84" r="4"/>
+              </g>
+              <g class="orbit-electron" data-track="orbit-right" data-phase="0.1" data-direction="-1">
+                <circle class="orbit-electron-dot" cx="128" cy="114" r="4"/>
+              </g>
+              <g class="orbit-electron" data-track="orbit-outer" data-phase="0.77" data-direction="1">
+                <circle class="orbit-electron-dot" cx="26" cy="-168" r="4"/>
+              </g>
+              <path class="orbit-label-connector" d="M-196-128l24 16M196-128l-24 16M0 170v6"/>
+              <g class="orbit-label" transform="translate(-196 -144)">
+                <rect x="-34" y="-16" width="68" height="32" rx="16"/>
+                <text class="orbit-tag">UI</text>
+              </g>
+              <g class="orbit-label" transform="translate(196 -144)">
+                <rect x="-34" y="-16" width="68" height="32" rx="16"/>
+                <text class="orbit-tag">API</text>
+              </g>
+              <g class="orbit-label" transform="translate(0 192)">
+                <rect x="-34" y="-16" width="68" height="32" rx="16"/>
+                <text class="orbit-tag">CI</text>
+              </g>
             </g>
           </svg>
           <div class="art-bottom"><p>Built in.<br>Not added on.</p><span class="eyebrow">Think. Test.<br>Improve. Repeat.</span></div>
@@ -643,6 +667,71 @@
       copyTimer = setTimeout(() => { copyLabel.textContent = 'Copy email'; }, 3000);
     });
     document.getElementById('year').textContent = String(new Date().getFullYear());
+
+    // Follow the actual SVG rings so the dots and their trails share the same path.
+    const orbitDuration = 5000; // Milliseconds for one complete orbit.
+    const trailSegments = 12;
+    const trailLength = 0.055; // Fraction of a ring covered by the fading trail.
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const electrons = Array.from(document.querySelectorAll('.orbit-electron'), group => {
+      const track = document.getElementById(group.dataset.track);
+      const dot = group.querySelector('.orbit-electron-dot');
+      group.setAttribute('transform', track.getAttribute('transform') || 'rotate(0)');
+      const trail = Array.from({ length: trailSegments }, (_, index) => {
+        const segment = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        const fade = 1 - index / trailSegments;
+        segment.setAttribute('class', 'orbit-trail');
+        segment.setAttribute('stroke-width', (0.5 + 2.6 * fade).toFixed(2));
+        segment.setAttribute('opacity', (0.48 * fade * fade).toFixed(3));
+        group.insertBefore(segment, group.firstChild);
+        return segment;
+      });
+      return { track, dot, trail, length: track.getTotalLength(),
+        phase: Number(group.dataset.phase), direction: Number(group.dataset.direction) };
+    });
+
+    function drawOrbits(elapsed) {
+      electrons.forEach(electron => {
+        const progress = electron.phase + electron.direction * elapsed / orbitDuration;
+        const pointAt = fraction => electron.track.getPointAtLength(
+          ((fraction % 1 + 1) % 1) * electron.length
+        );
+        let head = pointAt(progress);
+        electron.dot.setAttribute('cx', head.x);
+        electron.dot.setAttribute('cy', head.y);
+        electron.trail.forEach((segment, index) => {
+          const tail = pointAt(progress - electron.direction * trailLength * (index + 1) / trailSegments);
+          segment.setAttribute('d', `M${head.x} ${head.y} L${tail.x} ${tail.y}`);
+          head = tail;
+        });
+      });
+    }
+
+    let orbitFrame;
+    let orbitPreviousTime = null;
+    let orbitElapsed = 0;
+    let orbitVisible = true;
+    function animateOrbits(time) {
+      if (orbitPreviousTime !== null) orbitElapsed = (orbitElapsed + time - orbitPreviousTime) % orbitDuration;
+      orbitPreviousTime = time;
+      drawOrbits(orbitElapsed);
+      orbitFrame = requestAnimationFrame(animateOrbits);
+    }
+    function syncOrbitAnimation() {
+      cancelAnimationFrame(orbitFrame);
+      orbitPreviousTime = null;
+      if (!reducedMotion.matches && !document.hidden && orbitVisible) {
+        orbitFrame = requestAnimationFrame(animateOrbits);
+      }
+    }
+    drawOrbits(0);
+    syncOrbitAnimation();
+    reducedMotion.addEventListener('change', syncOrbitAnimation);
+    document.addEventListener('visibilitychange', syncOrbitAnimation);
+    new IntersectionObserver(([entry]) => {
+      orbitVisible = entry.isIntersecting;
+      syncOrbitAnimation();
+    }).observe(document.querySelector('.hero-art'));
   </script>
   <!-- Embedded Manrope font license:
 Copyright 2018 The Manrope Project Authors (https://github.com/googlefonts/manrope)
