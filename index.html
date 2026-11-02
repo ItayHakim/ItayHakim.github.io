@@ -1,311 +1,311 @@
 <!DOCTYPE html>
 <!-- Personal portfolio. Styles and JavaScript are organized in src/. -->
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#f4f4ed">
-        <meta name="description" content="Itay Hakim — QA Automation Engineer & SDET in Herzliya, Israel. Cypress and Playwright automation, 200+ E2E tests, and quality built into the development process.">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Itay Hakim — Quality, by design.">
-        <meta property="og:description" content="QA Automation Engineer & SDET. Building dependable automation and stronger engineering practices.">
-        <meta property="og:url" content="https://itayhakim.github.io/">
-        <link rel="canonical" href="https://itayhakim.github.io/">
-        <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231d3329'/%3E%3Cpath d='M18 32l10 10 20-22' fill='none' stroke='%23d6f284' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-        <title>Itay Hakim — QA Automation Engineer & SDET</title>
-        <link rel="stylesheet" href="src/styles/baseStyles.css">
-        <link rel="stylesheet" href="src/styles/orbitStyles.css">
-        <link rel="stylesheet" href="src/styles/sectionStyles.css">
-        <link rel="stylesheet" href="src/styles/responsiveStyles.css">
+<html id="page-root" class="qa-html" lang="en">
+    <head id="page-head" class="qa-head">
+        <meta id="meta-charset" class="qa-meta" charset="utf-8">
+        <meta id="meta-viewport" class="qa-meta" name="viewport" content="width=device-width, initial-scale=1">
+        <meta id="meta-theme-color" class="qa-meta" name="theme-color" content="#f4f4ed">
+        <meta id="meta-description" class="qa-meta" name="description" content="Itay Hakim — QA Automation Engineer & SDET in Herzliya, Israel. Cypress and Playwright automation, 200+ E2E tests, and quality built into the development process.">
+        <meta id="meta-og-type" class="qa-meta" property="og:type" content="website">
+        <meta id="meta-og-title" class="qa-meta" property="og:title" content="Itay Hakim — Quality, by design.">
+        <meta id="meta-og-description" class="qa-meta" property="og:description" content="QA Automation Engineer & SDET. Building dependable automation and stronger engineering practices.">
+        <meta id="meta-og-url" class="qa-meta" property="og:url" content="https://itayhakim.github.io/">
+        <link id="link-canonical" class="qa-link" rel="canonical" href="https://itayhakim.github.io/">
+        <link id="link-icon" class="qa-link" rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231d3329'/%3E%3Cpath d='M18 32l10 10 20-22' fill='none' stroke='%23d6f284' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+        <title id="page-title" class="qa-title">Itay Hakim — QA Automation Engineer & SDET</title>
+        <link id="link-base-styles" class="qa-link" rel="stylesheet" href="src/styles/baseStyles.css">
+        <link id="link-orbit-styles" class="qa-link" rel="stylesheet" href="src/styles/orbitStyles.css">
+        <link id="link-section-styles" class="qa-link" rel="stylesheet" href="src/styles/sectionStyles.css">
+        <link id="link-responsive-styles" class="qa-link" rel="stylesheet" href="src/styles/responsiveStyles.css">
         <!-- Defer keeps the file order and runs these scripts after the HTML is ready. -->
-        <script defer src="src/config/siteConfig.js"></script>
-        <script defer src="src/data/walkthroughData.js"></script>
-        <script defer src="src/scripts/navigation.js"></script>
-        <script defer src="src/scripts/projectWalkthrough.js"></script>
-        <script defer src="src/scripts/contact.js"></script>
-        <script defer src="src/scripts/orbitAnimation.js"></script>
-        <script defer src="src/main.js"></script>
+        <script id="script-site-config" class="qa-script" defer src="src/config/siteConfig.js"></script>
+        <script id="script-walkthrough-data" class="qa-script" defer src="src/data/walkthroughData.js"></script>
+        <script id="script-navigation" class="qa-script" defer src="src/scripts/navigation.js"></script>
+        <script id="script-project-walkthrough" class="qa-script" defer src="src/scripts/projectWalkthrough.js"></script>
+        <script id="script-contact" class="qa-script" defer src="src/scripts/contact.js"></script>
+        <script id="script-orbit-animation" class="qa-script" defer src="src/scripts/orbitAnimation.js"></script>
+        <script id="script-main" class="qa-script" defer src="src/main.js"></script>
     </head>
-    <body>
+    <body id="page-body" class="qa-body">
         <!-- Reusable, inline icons; no third-party icon library. -->
-        <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;overflow:hidden">
-            <defs>
-                <symbol id="arrow-up-right" viewBox="0 0 24 24">
-                    <path d="M5 19 19 5M5 5h14v14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg id="icon-sprite" class="qa-svg" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;overflow:hidden">
+            <defs id="icon-sprite-defs" class="qa-defs">
+                <symbol class="qa-symbol" id="arrow-up-right" viewBox="0 0 24 24">
+                    <path id="arrow-up-right-path" class="qa-path" d="M5 19 19 5M5 5h14v14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </symbol>
-                <symbol id="arrow-right" viewBox="0 0 24 24">
-                    <path d="M4 12h16m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <symbol class="qa-symbol" id="arrow-right" viewBox="0 0 24 24">
+                    <path id="arrow-right-path" class="qa-path" d="M4 12h16m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </symbol>
-                <symbol id="asterisk" viewBox="0 0 32 32">
-                    <path d="M16 2v28M2 16h28M6.1 6.1l19.8 19.8M6.1 25.9 25.9 6.1" fill="none" stroke="currentColor" stroke-width="3"/>
+                <symbol class="qa-symbol" id="asterisk" viewBox="0 0 32 32">
+                    <path id="asterisk-path" class="qa-path" d="M16 2v28M2 16h28M6.1 6.1l19.8 19.8M6.1 25.9 25.9 6.1" fill="none" stroke="currentColor" stroke-width="3"/>
                 </symbol>
             </defs>
         </svg>
-        <a class="skip" href="#main">Skip to content</a>
+        <a id="skip-link" class="skip" href="#main">Skip to content</a>
         <!-- NAVIGATION -->
-        <header class="site-header">
-            <div class="wrap nav-row">
-                <a class="brand" href="#top" aria-label="Itay Hakim, back to top"><svg class="brand-mark" aria-hidden="true"><use href="#asterisk"/></svg><span>Itay Hakim</span></a>
-                <button class="menu-button" id="menu-button" type="button" aria-expanded="true" aria-controls="navigation" hidden>Menu <span aria-hidden="true">+</span></button>
+        <header id="site-header" class="site-header">
+            <div id="site-header-wrap" class="wrap nav-row">
+                <a id="brand" class="brand" href="#top" aria-label="Itay Hakim, back to top"><svg id="brand-mark" class="brand-mark" aria-hidden="true"><use id="brand-mark-reference" class="qa-use" href="#asterisk"/></svg><span id="brand-itay-hakim" class="qa-span">Itay Hakim</span></a>
+                <button class="menu-button" id="menu-button" type="button" aria-expanded="true" aria-controls="navigation" hidden>Menu <span id="menu-symbol" class="qa-span" aria-hidden="true">+</span></button>
                 <nav class="nav-links" id="navigation" aria-label="Main navigation">
-                    <a href="#work">Work</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#about">About</a>
-                    <a class="nav-contact" href="#contact">Let’s talk <svg class="arrow" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
+                    <a id="navigation-work" class="qa-a" href="#work">Work</a>
+                    <a id="navigation-experience" class="qa-a" href="#experience">Experience</a>
+                    <a id="navigation-about" class="qa-a" href="#about">About</a>
+                    <a id="navigation-contact" class="nav-contact" href="#contact">Let’s talk <svg id="navigation-contact-arrow" class="arrow" aria-hidden="true"><use id="navigation-contact-arrow-reference" class="qa-use" href="#arrow-up-right"/></svg></a>
                 </nav>
             </div>
         </header>
-        <main id="main">
+        <main class="qa-main" id="main">
             <!-- HERO -->
             <section class="hero wrap" id="top" aria-labelledby="hero-title">
-                <div class="hero-meta eyebrow">
-                    <span>QA Automation Engineer &amp; SDET</span>
-                    <span class="location"><i class="location-dot" aria-hidden="true"></i>Herzliya, Israel</span>
+                <div id="hero-meta" class="hero-meta eyebrow">
+                    <span id="hero-meta-qa-automation-engineer-sdet" class="qa-span">QA Automation Engineer &amp; SDET</span>
+                    <span id="location" class="location"><i id="location-dot" class="location-dot" aria-hidden="true"></i>Herzliya, Israel</span>
                 </div>
-                <div class="hero-grid">
-                    <div class="enter">
-                        <p class="intro-name">Hi, I’m Itay.</p>
-                        <h1 id="hero-title">Quality,<span class="second-line">by design<span class="period">.</span></span></h1>
-                        <p class="hero-description">I build automation that teams can rely on. From the first test to the release pipeline, I bring quality into the way software is built.</p>
-                        <div class="hero-actions">
-                            <a class="button" href="#work">Explore my work <svg class="arrow" aria-hidden="true"><use href="#arrow-right"/></svg></a>
-                            <a class="text-link" href="https://www.linkedin.com/in/itay-hakim-b00a9241a" target="_blank" rel="noopener noreferrer">LinkedIn <svg class="arrow" aria-hidden="true"><use href="#arrow-up-right"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+                <div id="hero-grid" class="hero-grid">
+                    <div id="enter" class="enter">
+                        <p id="intro-name" class="intro-name">Hi, I’m Itay.</p>
+                        <h1 class="qa-h1" id="hero-title">Quality,<span id="second-line" class="second-line">by design<span id="period" class="period">.</span></span></h1>
+                        <p id="hero-description" class="hero-description">I build automation that teams can rely on. From the first test to the release pipeline, I bring quality into the way software is built.</p>
+                        <div id="hero-actions" class="hero-actions">
+                            <a id="hero-work-link" class="button" href="#work">Explore my work <svg id="hero-work-link-arrow" class="arrow" aria-hidden="true"><use id="hero-work-link-arrow-reference" class="qa-use" href="#arrow-right"/></svg></a>
+                            <a id="hero-linkedin" class="text-link" href="https://www.linkedin.com/in/itay-hakim-b00a9241a" target="_blank" rel="noopener noreferrer">LinkedIn <svg id="hero-linkedin-arrow" class="arrow" aria-hidden="true"><use id="hero-linkedin-arrow-reference" class="qa-use" href="#arrow-up-right"/></svg><span id="hero-linkedin-sr-only" class="sr-only"> (opens in a new tab)</span></a>
                         </div>
                     </div>
-                    <div class="hero-art enter-delayed" role="img" aria-label="An illustration of UI, API and CI testing connected around a quality check mark">
-                        <div class="art-top eyebrow">
-                            <span>Quality is a process.</span>
-                            <span class="cross" aria-hidden="true">+</span>
+                    <div id="hero-art" class="hero-art enter-delayed" role="img" aria-label="An illustration of UI, API and CI testing connected around a quality check mark">
+                        <div id="art-top" class="art-top eyebrow">
+                            <span id="art-top-quality-is-a-process" class="qa-span">Quality is a process.</span>
+                            <span id="cross" class="cross" aria-hidden="true">+</span>
                         </div>
-                        <svg class="orbit-art" viewBox="0 0 560 490" aria-hidden="true">
-                            <defs>
-                                <radialGradient id="disc" cx="32%" cy="24%" r="85%">
-                                    <stop offset="0" stop-color="#466343"/>
-                                    <stop offset=".6" stop-color="#29442f"/>
-                                    <stop offset="1" stop-color="#1b3024"/>
+                        <svg id="orbit-art" class="orbit-art" viewBox="0 0 560 490" aria-hidden="true">
+                            <defs id="orbit-art-defs" class="qa-defs">
+                                <radialGradient class="qa-radial-gradient" id="disc" cx="32%" cy="24%" r="85%">
+                                    <stop id="disc-stop" class="qa-stop" offset="0" stop-color="#466343"/>
+                                    <stop id="disc-stop-2" class="qa-stop" offset=".6" stop-color="#29442f"/>
+                                    <stop id="disc-stop-3" class="qa-stop" offset="1" stop-color="#1b3024"/>
                                 </radialGradient>
-                                <linearGradient id="check" x1="0" y1="0" x2="1" y2="1">
-                                    <stop stop-color="#e6ffa6"/>
-                                    <stop offset="1" stop-color="#b9dc76"/>
+                                <linearGradient class="qa-linear-gradient" id="check" x1="0" y1="0" x2="1" y2="1">
+                                    <stop id="check-stop" class="qa-stop" stop-color="#e6ffa6"/>
+                                    <stop id="check-stop-2" class="qa-stop" offset="1" stop-color="#b9dc76"/>
                                 </linearGradient>
-                                <linearGradient id="orbit-frost-fill" x1="0" y1="0" x2="0" y2="1">
-                                    <stop stop-color="#fcfdf8" stop-opacity=".96"/>
-                                    <stop offset=".55" stop-color="#f4f6eb" stop-opacity=".86"/>
-                                    <stop offset="1" stop-color="#eaf0df" stop-opacity=".92"/>
+                                <linearGradient class="qa-linear-gradient" id="orbit-frost-fill" x1="0" y1="0" x2="0" y2="1">
+                                    <stop id="orbit-frost-fill-stop" class="qa-stop" stop-color="#fcfdf8" stop-opacity=".96"/>
+                                    <stop id="orbit-frost-fill-stop-2" class="qa-stop" offset=".55" stop-color="#f4f6eb" stop-opacity=".86"/>
+                                    <stop id="orbit-frost-fill-stop-3" class="qa-stop" offset="1" stop-color="#eaf0df" stop-opacity=".92"/>
                                 </linearGradient>
                                 <!-- The same glass areas hide sharp particles and reveal their softened copy. -->
-                                <clipPath id="orbit-glass-clip" clipPathUnits="userSpaceOnUse">
-                                    <rect id="orbit-glass-ui" x="-34" y="-16" width="68" height="32" rx="16" transform="translate(-147 -94)"/>
-                                    <rect id="orbit-glass-api" x="-34" y="-16" width="68" height="32" rx="16" transform="translate(153 -78)"/>
-                                    <rect id="orbit-glass-ci" x="-34" y="-16" width="68" height="32" rx="16" transform="translate(26 168)"/>
+                                <clipPath class="qa-clip-path" id="orbit-glass-clip" clipPathUnits="userSpaceOnUse">
+                                    <rect class="qa-rect" id="orbit-glass-ui" x="-34" y="-16" width="68" height="32" rx="16" transform="translate(-147 -94)"/>
+                                    <rect class="qa-rect" id="orbit-glass-api" x="-34" y="-16" width="68" height="32" rx="16" transform="translate(153 -78)"/>
+                                    <rect class="qa-rect" id="orbit-glass-ci" x="-34" y="-16" width="68" height="32" rx="16" transform="translate(26 168)"/>
                                 </clipPath>
-                                <mask id="orbit-clear-mask" maskUnits="userSpaceOnUse" x="-280" y="-236" width="560" height="490">
-                                    <rect x="-280" y="-236" width="560" height="490" fill="white"/>
-                                    <g fill="black">
-                                        <use href="#orbit-glass-ui"/>
-                                        <use href="#orbit-glass-api"/>
-                                        <use href="#orbit-glass-ci"/>
+                                <mask class="qa-mask" id="orbit-clear-mask" maskUnits="userSpaceOnUse" x="-280" y="-236" width="560" height="490">
+                                    <rect id="orbit-clear-mask-rect" class="qa-rect" x="-280" y="-236" width="560" height="490" fill="white"/>
+                                    <g id="orbit-clear-mask-g" class="qa-g" fill="black">
+                                        <use id="orbit-clear-mask-g-reference" class="qa-use" href="#orbit-glass-ui"/>
+                                        <use id="orbit-clear-mask-g-reference-2" class="qa-use" href="#orbit-glass-api"/>
+                                        <use id="orbit-clear-mask-g-reference-3" class="qa-use" href="#orbit-glass-ci"/>
                                     </g>
                                 </mask>
-                                <filter id="orbit-glass-blur" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+                                <filter class="qa-filter" id="orbit-glass-blur" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
                                     <!-- Transmit a broad pool of light through the frost, without the sharp particle. -->
-                                    <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
-                                    <feComponentTransfer result="diffused-light">
-                                        <feFuncA type="linear" slope="3.2"/>
+                                    <feGaussianBlur id="orbit-glass-blur-fe-gaussian-blur" class="qa-fe-gaussian-blur" in="SourceAlpha" stdDeviation="5"/>
+                                    <feComponentTransfer id="orbit-glass-blur-fe-component-transfer" class="qa-fe-component-transfer" result="diffused-light">
+                                        <feFuncA id="orbit-glass-blur-fe-component-transfer-fe-func-a" class="qa-fe-func-a" type="linear" slope="3.2"/>
                                     </feComponentTransfer>
-                                    <feFlood flood-color="#b6e96a" result="glow-color"/>
-                                    <feComposite in="glow-color" in2="diffused-light" operator="in"/>
+                                    <feFlood id="orbit-glass-blur-fe-flood" class="qa-fe-flood" flood-color="#b6e96a" result="glow-color"/>
+                                    <feComposite id="orbit-glass-blur-fe-composite" class="qa-fe-composite" in="glow-color" in2="diffused-light" operator="in"/>
                                 </filter>
                             </defs>
-                            <g transform="translate(280 236)">
+                            <g id="orbit-art-g" class="qa-g" transform="translate(280 236)">
                                 <circle class="orbit-line" id="orbit-outer" r="170"/>
-                                <circle class="orbit-line" r="133" stroke-dasharray="2 5"/>
+                                <circle id="orbit-art-g-orbit-line" class="orbit-line" r="133" stroke-dasharray="2 5"/>
                                 <ellipse class="orbit-line" id="orbit-left" rx="210" ry="92" transform="rotate(-32)"/>
                                 <ellipse class="orbit-line" id="orbit-right" rx="210" ry="92" transform="rotate(32)"/>
-                                <path class="orbit-line" d="M-222 0h444M0-183v366" stroke-dasharray="3 6"/>
-                                <g class="orbit-disc">
-                                    <circle r="86" fill="url(#disc)" stroke="#4f6e48" stroke-width="1"/>
-                                    <circle r="76" fill="none" stroke="#94ae763d" stroke-width=".7"/>
-                                    <path d="m-32 0 21 23 44-49" fill="none" stroke="url(#check)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="orbit-art-g-orbit-line-2" class="orbit-line" d="M-222 0h444M0-183v366" stroke-dasharray="3 6"/>
+                                <g id="orbit-disc" class="orbit-disc">
+                                    <circle id="orbit-disc-circle" class="qa-circle" r="86" fill="url(#disc)" stroke="#4f6e48" stroke-width="1"/>
+                                    <circle id="orbit-disc-circle-2" class="qa-circle" r="76" fill="none" stroke="#94ae763d" stroke-width=".7"/>
+                                    <path id="orbit-disc-path" class="qa-path" d="m-32 0 21 23 44-49" fill="none" stroke="url(#check)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
                                 </g>
-                                <g mask="url(#orbit-clear-mask)">
-                                    <g id="orbit-particles">
-                                        <g class="orbit-electron" data-track="orbit-left" data-phase="0.4" data-direction="1">
-                                            <circle class="orbit-electron-dot" cx="-174" cy="84" r="4"/>
+                                <g id="orbit-art-g-g" class="qa-g" mask="url(#orbit-clear-mask)">
+                                    <g class="qa-g" id="orbit-particles">
+                                        <g id="orbit-electron-left" class="orbit-electron" data-track="orbit-left" data-phase="0.4" data-direction="1">
+                                            <circle id="orbit-electron-left-orbit-electron-dot" class="orbit-electron-dot" cx="-174" cy="84" r="4"/>
                                         </g>
-                                        <g class="orbit-electron" data-track="orbit-right" data-phase="0.1" data-direction="-1">
-                                            <circle class="orbit-electron-dot" cx="128" cy="114" r="4"/>
+                                        <g id="orbit-electron-right" class="orbit-electron" data-track="orbit-right" data-phase="0.1" data-direction="-1">
+                                            <circle id="orbit-electron-right-orbit-electron-dot" class="orbit-electron-dot" cx="128" cy="114" r="4"/>
                                         </g>
-                                        <g class="orbit-electron" data-track="orbit-outer" data-phase="0.77" data-direction="1">
-                                            <circle class="orbit-electron-dot" cx="26" cy="-168" r="4"/>
+                                        <g id="orbit-electron-outer" class="orbit-electron" data-track="orbit-outer" data-phase="0.77" data-direction="1">
+                                            <circle id="orbit-electron-outer-orbit-electron-dot" class="orbit-electron-dot" cx="26" cy="-168" r="4"/>
                                         </g>
                                     </g>
                                 </g>
-                                <g class="orbit-frost">
-                                    <use href="#orbit-glass-ui"/>
-                                    <use href="#orbit-glass-api"/>
-                                    <use href="#orbit-glass-ci"/>
+                                <g id="orbit-frost" class="orbit-frost">
+                                    <use id="orbit-frost-reference" class="qa-use" href="#orbit-glass-ui"/>
+                                    <use id="orbit-frost-reference-2" class="qa-use" href="#orbit-glass-api"/>
+                                    <use id="orbit-frost-reference-3" class="qa-use" href="#orbit-glass-ci"/>
                                 </g>
-                                <use class="orbit-glass-particles" href="#orbit-particles" filter="url(#orbit-glass-blur)" clip-path="url(#orbit-glass-clip)"/>
-                                <g class="orbit-label" transform="translate(-147 -94)">
-                                    <rect x="-34" y="-16" width="68" height="32" rx="16"/>
-                                    <path class="orbit-label-shine" d="M-22-11H22"/>
-                                    <text class="orbit-tag">UI</text>
+                                <use id="orbit-glass-particles" class="orbit-glass-particles" href="#orbit-particles" filter="url(#orbit-glass-blur)" clip-path="url(#orbit-glass-clip)"/>
+                                <g id="orbit-label-ui" class="orbit-label" transform="translate(-147 -94)">
+                                    <rect id="orbit-label-ui-rect" class="qa-rect" x="-34" y="-16" width="68" height="32" rx="16"/>
+                                    <path id="orbit-label-ui-orbit-label-shine" class="orbit-label-shine" d="M-22-11H22"/>
+                                    <text id="orbit-label-ui-orbit-tag" class="orbit-tag">UI</text>
                                 </g>
-                                <g class="orbit-label" transform="translate(153 -78)">
-                                    <rect x="-34" y="-16" width="68" height="32" rx="16"/>
-                                    <path class="orbit-label-shine" d="M-22-11H22"/>
-                                    <text class="orbit-tag">API</text>
+                                <g id="orbit-label-api" class="orbit-label" transform="translate(153 -78)">
+                                    <rect id="orbit-label-api-rect" class="qa-rect" x="-34" y="-16" width="68" height="32" rx="16"/>
+                                    <path id="orbit-label-api-orbit-label-shine" class="orbit-label-shine" d="M-22-11H22"/>
+                                    <text id="orbit-label-api-orbit-tag" class="orbit-tag">API</text>
                                 </g>
-                                <g class="orbit-label" transform="translate(26 168)">
-                                    <rect x="-34" y="-16" width="68" height="32" rx="16"/>
-                                    <path class="orbit-label-shine" d="M-22-11H22"/>
-                                    <text class="orbit-tag">CI</text>
+                                <g id="orbit-label-ci" class="orbit-label" transform="translate(26 168)">
+                                    <rect id="orbit-label-ci-rect" class="qa-rect" x="-34" y="-16" width="68" height="32" rx="16"/>
+                                    <path id="orbit-label-ci-orbit-label-shine" class="orbit-label-shine" d="M-22-11H22"/>
+                                    <text id="orbit-label-ci-orbit-tag" class="orbit-tag">CI</text>
                                 </g>
                             </g>
                         </svg>
-                        <div class="art-bottom">
-                            <p>Built in.<br>Not added on.</p>
-                            <span class="eyebrow">Think. Test.<br>Improve. Repeat.</span>
+                        <div id="art-bottom" class="art-bottom">
+                            <p id="art-bottom-description" class="qa-p">Built in.<br id="art-bottom-description-break" class="qa-br">Not added on.</p>
+                            <span id="art-bottom-eyebrow" class="eyebrow">Think. Test.<br id="art-bottom-eyebrow-break" class="qa-br">Improve. Repeat.</span>
                         </div>
                     </div>
                 </div>
-                <div class="hero-foot">
-                    <p class="hero-foot-label eyebrow"><svg aria-hidden="true"><use href="#asterisk"/></svg>Thoughtful testing. Dependable engineering.</p>
-                    <div class="stack-list" aria-label="Core technologies">
-                        <span>Cypress</span>
-                        <span>Playwright</span>
-                        <span>TypeScript</span>
-                        <span>GitLab CI/CD</span>
+                <div id="hero-foot" class="hero-foot">
+                    <p id="hero-foot-label" class="hero-foot-label eyebrow"><svg id="hero-foot-label-icon" class="qa-svg" aria-hidden="true"><use id="hero-foot-label-icon-reference" class="qa-use" href="#asterisk"/></svg>Thoughtful testing. Dependable engineering.</p>
+                    <div id="stack-list" class="stack-list" aria-label="Core technologies">
+                        <span id="stack-list-cypress" class="qa-span">Cypress</span>
+                        <span id="stack-list-playwright" class="qa-span">Playwright</span>
+                        <span id="stack-list-type-script" class="qa-span">TypeScript</span>
+                        <span id="stack-list-git-lab-ci-cd" class="qa-span">GitLab CI/CD</span>
                     </div>
                 </div>
             </section>
             <!-- SELECTED WORK -->
             <section class="section work-section" id="work" aria-labelledby="work-title">
-                <div class="wrap">
-                    <div class="section-top">
-                        <div>
-                            <p class="section-label eyebrow"><span class="index">01</span>Selected work</p>
-                            <h2 id="work-title">The details make<br>the difference.</h2>
+                <div id="work-wrap" class="wrap">
+                    <div id="work-wrap-section-top" class="section-top">
+                        <div id="work-wrap-section-top-content" class="qa-div">
+                            <p id="work-wrap-section-top-content-section-label" class="section-label eyebrow"><span id="work-wrap-section-top-content-section-label-index" class="index">01</span>Selected work</p>
+                            <h2 class="qa-h2" id="work-title">The details make<br id="work-title-break" class="qa-br">the difference.</h2>
                         </div>
-                        <p class="section-description">A closer look at how I turn real user journeys into clear, maintainable automated tests.</p>
+                        <p id="work-wrap-section-top-section-description" class="section-description">A closer look at how I turn real user journeys into clear, maintainable automated tests.</p>
                     </div>
-                    <article class="project">
-                        <div class="project-info">
-                            <div class="project-type eyebrow"><span class="small-dot" aria-hidden="true"></span>Public project / Web automation</div>
-                            <h3>Sunflower<br>Automation.</h3>
-                            <p>An end-to-end testing project for Demo Web Shop. From creating an account to verifying a configured product in the cart, it checks the details that make a user journey work.</p>
-                            <div class="tags" aria-label="Project technologies">
-                                <span class="tag">Playwright</span>
-                                <span class="tag">TypeScript</span>
-                                <span class="tag">Fixtures &amp; helpers</span>
+                    <article id="project" class="project">
+                        <div id="project-info" class="project-info">
+                            <div id="project-type" class="project-type eyebrow"><span id="small-dot" class="small-dot" aria-hidden="true"></span>Public project / Web automation</div>
+                            <h3 id="project-info-title" class="qa-h3">Sunflower<br id="project-info-title-break" class="qa-br">Automation.</h3>
+                            <p id="project-info-description" class="qa-p">An end-to-end testing project for Demo Web Shop. From creating an account to verifying a configured product in the cart, it checks the details that make a user journey work.</p>
+                            <div id="tags" class="tags" aria-label="Project technologies">
+                                <span id="tags-tag" class="tag">Playwright</span>
+                                <span id="tags-tag-2" class="tag">TypeScript</span>
+                                <span id="tags-tag-3" class="tag">Fixtures &amp; helpers</span>
                             </div>
-                            <a class="text-link" href="https://github.com/ItayHakim/Sunflower-Automation-Project" target="_blank" rel="noopener noreferrer">Explore the repository <svg class="arrow" aria-hidden="true"><use href="#arrow-up-right"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+                            <a id="project-repository-link" class="text-link" href="https://github.com/ItayHakim/Sunflower-Automation-Project" target="_blank" rel="noopener noreferrer">Explore the repository <svg id="project-repository-link-arrow" class="arrow" aria-hidden="true"><use id="project-repository-link-arrow-reference" class="qa-use" href="#arrow-up-right"/></svg><span id="project-repository-link-sr-only" class="sr-only"> (opens in a new tab)</span></a>
                         </div>
-                        <div class="walkthrough dark">
-                            <div class="walkthrough-top">
-                                <div class="window-dots" aria-hidden="true">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
+                        <div id="walkthrough" class="walkthrough dark">
+                            <div id="walkthrough-top" class="walkthrough-top">
+                                <div id="window-dots" class="window-dots" aria-hidden="true">
+                                    <span id="window-dots-text" class="qa-span"></span>
+                                    <span id="window-dots-text-2" class="qa-span"></span>
+                                    <span id="window-dots-text-3" class="qa-span"></span>
                                 </div>
-                                <span class="eyebrow">Test flow walkthrough</span>
+                                <span id="walkthrough-top-eyebrow" class="eyebrow">Test flow walkthrough</span>
                             </div>
-                            <div class="flow-tabs" role="tablist" aria-label="Explore the test flow">
+                            <div id="flow-tabs" class="flow-tabs" role="tablist" aria-label="Explore the test flow">
                                 <button class="flow-tab" id="tab-register" type="button" role="tab" aria-selected="true" aria-controls="flow-panel" data-step="0">01 Register</button>
                                 <button class="flow-tab" id="tab-select" type="button" role="tab" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-step="1">02 Select</button>
                                 <button class="flow-tab" id="tab-verify" type="button" role="tab" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-step="2">03 Verify</button>
                             </div>
-                            <div class="flow-visual" aria-hidden="true">
-                                <div class="demo-frame">
-                                    <div class="demo-bar">
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
+                            <div id="flow-visual" class="flow-visual" aria-hidden="true">
+                                <div id="demo-frame" class="demo-frame">
+                                    <div id="demo-bar" class="demo-bar">
+                                        <i id="demo-bar-i" class="qa-i"></i>
+                                        <i id="demo-bar-i-2" class="qa-i"></i>
+                                        <i id="demo-bar-i-3" class="qa-i"></i>
                                     </div>
-                                    <div class="demo-body">
-                                        <div class="demo-icon">
-                                            <svg id="flow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                                                <circle cx="12" cy="8" r="3"/>
-                                                <path d="M5 21v-3a7 7 0 0 1 14 0v3"/>
+                                    <div id="demo-body" class="demo-body">
+                                        <div id="demo-icon" class="demo-icon">
+                                            <svg class="qa-svg" id="flow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                                                <circle id="flow-register-head" class="flow-icon-part" cx="12" cy="8" r="3"/>
+                                                <path id="flow-register-body" class="flow-icon-part" d="M5 21v-3a7 7 0 0 1 14 0v3"/>
                                             </svg>
                                         </div>
-                                        <div class="demo-fields">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
+                                        <div id="demo-fields" class="demo-fields">
+                                            <span id="demo-fields-text" class="qa-span"></span>
+                                            <span id="demo-fields-text-2" class="qa-span"></span>
+                                            <span id="demo-fields-text-3" class="qa-span"></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="flow-panel" id="flow-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-register">
                                 <span class="step-number" id="step-number">STEP 01 / 03</span>
-                                <h4 id="step-title">Start with a fresh account.</h4>
-                                <p id="step-description">Generate a unique email, complete registration, then verify the home page URL, account email, and authentication cookie.</p>
+                                <h4 class="qa-h4" id="step-title">Start with a fresh account.</h4>
+                                <p class="qa-p" id="step-description">Generate a unique email, complete registration, then verify the home page URL, account email, and authentication cookie.</p>
                                 <div class="code-line" id="step-assertion">CHECK → URL · account email · auth cookie</div>
                             </div>
-                            <p class="walkthrough-caption"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor"/><path d="M8 7v4M8 4.5v.5" stroke="currentColor"/></svg>Interactive explanation of the project, not a live test run.</p>
-                            <noscript>
-                                <p class="walkthrough-caption">Next: choose a random featured product, complete its required options, and verify its details and quantity in the cart.</p>
+                            <p id="walkthrough-walkthrough-caption" class="walkthrough-caption"><svg id="walkthrough-walkthrough-caption-icon" class="qa-svg" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle id="walkthrough-walkthrough-caption-icon-circle" class="qa-circle" cx="8" cy="8" r="6" stroke="currentColor"/><path id="walkthrough-walkthrough-caption-icon-path" class="qa-path" d="M8 7v4M8 4.5v.5" stroke="currentColor"/></svg>Interactive explanation of the project, not a live test run.</p>
+                            <noscript id="walkthrough-noscript" class="qa-noscript">
+                                <p id="walkthrough-noscript-walkthrough-caption" class="walkthrough-caption">Next: choose a random featured product, complete its required options, and verify its details and quantity in the cart.</p>
                             </noscript>
                         </div>
                     </article>
-                    <div class="work-bottom">
-                        <span>Reusable actions. Centralized selectors. Typed test data.</span>
-                        <a class="text-link" href="https://github.com/ItayHakim" target="_blank" rel="noopener noreferrer">More on GitHub <svg class="arrow" aria-hidden="true"><use href="#arrow-up-right"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+                    <div id="work-bottom" class="work-bottom">
+                        <span id="work-bottom-text" class="qa-span">Reusable actions. Centralized selectors. Typed test data.</span>
+                        <a id="work-github-link" class="text-link" href="https://github.com/ItayHakim" target="_blank" rel="noopener noreferrer">More on GitHub <svg id="work-github-link-arrow" class="arrow" aria-hidden="true"><use id="work-github-link-arrow-reference" class="qa-use" href="#arrow-up-right"/></svg><span id="work-github-link-sr-only" class="sr-only"> (opens in a new tab)</span></a>
                     </div>
                 </div>
             </section>
             <!-- EXPERIENCE -->
             <section class="section experience-section dark" id="experience" aria-labelledby="experience-title">
-                <div class="wrap">
-                    <div class="section-top">
-                        <div>
-                            <p class="section-label eyebrow"><span class="index">02</span>Experience &amp; impact</p>
-                            <h2 id="experience-title">Built from zero.<br>Built for the team.</h2>
+                <div id="experience-wrap" class="wrap">
+                    <div id="experience-wrap-section-top" class="section-top">
+                        <div id="experience-wrap-section-top-content" class="qa-div">
+                            <p id="experience-wrap-section-top-content-section-label" class="section-label eyebrow"><span id="experience-wrap-section-top-content-section-label-index" class="index">02</span>Experience &amp; impact</p>
+                            <h2 class="qa-h2" id="experience-title">Built from zero.<br id="experience-title-break" class="qa-br">Built for the team.</h2>
                         </div>
-                        <p class="section-description">Nearly three years in Unit 8200, combining hands-on automation with a shared approach to software quality.</p>
+                        <p id="experience-wrap-section-top-section-description" class="section-description">Nearly three years in Unit 8200, combining hands-on automation with a shared approach to software quality.</p>
                     </div>
-                    <div class="metrics">
-                        <div class="metric">
-                            <p class="metric-value">200+</p>
-                            <p class="metric-label">End-to-end tests<br>built from scratch</p>
+                    <div id="metrics" class="metrics">
+                        <div id="metric-end-to-end-tests" class="metric">
+                            <p id="metric-end-to-end-tests-metric-value" class="metric-value">200+</p>
+                            <p id="metric-end-to-end-tests-metric-label" class="metric-label">End-to-end tests<br id="metric-end-to-end-tests-metric-label-break" class="qa-br">built from scratch</p>
                         </div>
-                        <div class="metric">
-                            <p class="metric-value">3</p>
-                            <p class="metric-label">Development teams<br>supported by quality initiatives</p>
+                        <div id="metric-development-teams" class="metric">
+                            <p id="metric-development-teams-metric-value" class="metric-value">3</p>
+                            <p id="metric-development-teams-metric-label" class="metric-label">Development teams<br id="metric-development-teams-metric-label-break" class="qa-br">supported by quality initiatives</p>
                         </div>
-                        <div class="metric">
-                            <p class="metric-value">Weekly</p>
-                            <p class="metric-label">Automation workshops<br>for engineering teams</p>
+                        <div id="metric-automation-workshops" class="metric">
+                            <p id="metric-automation-workshops-metric-value" class="metric-value">Weekly</p>
+                            <p id="metric-automation-workshops-metric-label" class="metric-label">Automation workshops<br id="metric-automation-workshops-metric-label-break" class="qa-br">for engineering teams</p>
                         </div>
                     </div>
-                    <div class="experience-detail">
-                        <div>
-                            <p class="job-date eyebrow">Nov 2023 — Jul 2026</p>
-                            <h3>QA Automation<br>Engineer &amp; SDET</h3>
-                            <p class="job-company">Unit 8200<br>Israel Defense Forces</p>
+                    <div id="experience-detail" class="experience-detail">
+                        <div id="experience-detail-content" class="qa-div">
+                            <p id="job-date" class="job-date eyebrow">Nov 2023 — Jul 2026</p>
+                            <h3 id="experience-detail-content-title" class="qa-h3">QA Automation<br id="experience-detail-content-title-break" class="qa-br">Engineer &amp; SDET</h3>
+                            <p id="job-company" class="job-company">Unit 8200<br id="job-company-break" class="qa-br">Israel Defense Forces</p>
                         </div>
-                        <ol class="job-highlights">
-                            <li>
-                                <span class="number" aria-hidden="true">01</span>
-                                <div>
-                                    <h4>A framework with a strong foundation.</h4>
-                                    <p>Built a Cypress framework using the Page Object Model and reusable custom commands. Integrated regression suites and test reporting into GitLab CI/CD.</p>
+                        <ol id="job-highlights" class="job-highlights">
+                            <li id="job-highlights-li" class="qa-li">
+                                <span id="job-highlights-li-number" class="number" aria-hidden="true">01</span>
+                                <div id="job-highlights-li-content" class="qa-div">
+                                    <h4 id="job-highlights-li-content-title" class="qa-h4">A framework with a strong foundation.</h4>
+                                    <p id="job-highlights-li-content-description" class="qa-p">Built a Cypress framework using the Page Object Model and reusable custom commands. Integrated regression suites and test reporting into GitLab CI/CD.</p>
                                 </div>
                             </li>
-                            <li>
-                                <span class="number" aria-hidden="true">02</span>
-                                <div>
-                                    <h4>Quality across the development lifecycle.</h4>
-                                    <p>Designed UI, API, integration, regression, and performance tests. Worked with developers and product managers on acceptance criteria, release planning, and defect investigation.</p>
+                            <li id="job-highlights-li-2" class="qa-li">
+                                <span id="job-highlights-li-2-number" class="number" aria-hidden="true">02</span>
+                                <div id="job-highlights-li-2-content" class="qa-div">
+                                    <h4 id="job-highlights-li-2-content-title" class="qa-h4">Quality across the development lifecycle.</h4>
+                                    <p id="job-highlights-li-2-content-description" class="qa-p">Designed UI, API, integration, regression, and performance tests. Worked with developers and product managers on acceptance criteria, release planning, and defect investigation.</p>
                                 </div>
                             </li>
-                            <li>
-                                <span class="number" aria-hidden="true">03</span>
-                                <div>
-                                    <h4>Better practices, shared.</h4>
-                                    <p>Mentored engineering teams, helped define and track quality KPIs, and delivered automation workshops. Developed internal tools and used Claude to support testing and quality tasks.</p>
+                            <li id="job-highlights-li-3" class="qa-li">
+                                <span id="job-highlights-li-3-number" class="number" aria-hidden="true">03</span>
+                                <div id="job-highlights-li-3-content" class="qa-div">
+                                    <h4 id="job-highlights-li-3-content-title" class="qa-h4">Better practices, shared.</h4>
+                                    <p id="job-highlights-li-3-content-description" class="qa-p">Mentored engineering teams, helped define and track quality KPIs, and delivered automation workshops. Developed internal tools and used Claude to support testing and quality tasks.</p>
                                 </div>
                             </li>
                         </ol>
@@ -314,130 +314,130 @@
             </section>
             <!-- SKILLS -->
             <section class="section skills-section" id="skills" aria-labelledby="skills-title">
-                <div class="wrap">
-                    <div class="section-top">
-                        <div>
-                            <p class="section-label eyebrow"><span class="index">03</span>My toolkit</p>
-                            <h2 id="skills-title">The right tools.<br>A thoughtful approach.</h2>
+                <div id="skills-wrap" class="wrap">
+                    <div id="skills-wrap-section-top" class="section-top">
+                        <div id="skills-wrap-section-top-content" class="qa-div">
+                            <p id="skills-wrap-section-top-content-section-label" class="section-label eyebrow"><span id="skills-wrap-section-top-content-section-label-index" class="index">03</span>My toolkit</p>
+                            <h2 class="qa-h2" id="skills-title">The right tools.<br id="skills-title-break" class="qa-br">A thoughtful approach.</h2>
                         </div>
-                        <p class="section-description">From writing the first assertion to understanding what happened in the pipeline.</p>
+                        <p id="skills-wrap-section-top-section-description" class="section-description">From writing the first assertion to understanding what happened in the pipeline.</p>
                     </div>
-                    <div class="skills-grid">
-                        <div class="skill-group">
-                            <svg class="skill-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" aria-hidden="true">
-                                <path d="m10 8-8 8 8 8m12-16 8 8-8 8M19 4l-6 24"/>
+                    <div id="skills-grid" class="skills-grid">
+                        <div id="skill-group-programming" class="skill-group">
+                            <svg id="skill-group-programming-skill-icon" class="skill-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" aria-hidden="true">
+                                <path id="skill-group-programming-skill-icon-path" class="qa-path" d="m10 8-8 8 8 8m12-16 8 8-8 8M19 4l-6 24"/>
                             </svg>
-                            <h3>Programming</h3>
-                            <ul>
-                                <li>TypeScript</li>
-                                <li>JavaScript</li>
+                            <h3 id="skill-group-programming-title" class="qa-h3">Programming</h3>
+                            <ul id="skill-group-programming-list" class="qa-ul">
+                                <li id="skill-group-programming-list-type-script" class="qa-li">TypeScript</li>
+                                <li id="skill-group-programming-list-java-script" class="qa-li">JavaScript</li>
                             </ul>
                         </div>
-                        <div class="skill-group">
-                            <svg class="skill-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" aria-hidden="true">
-                                <rect x="3" y="4" width="26" height="24" rx="3"/>
-                                <path d="M3 10h26m-19 9 4 4 8-9"/>
+                        <div id="skill-group-automation-apis" class="skill-group">
+                            <svg id="skill-group-automation-apis-skill-icon" class="skill-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" aria-hidden="true">
+                                <rect id="skill-group-automation-apis-skill-icon-rect" class="qa-rect" x="3" y="4" width="26" height="24" rx="3"/>
+                                <path id="skill-group-automation-apis-skill-icon-path" class="qa-path" d="M3 10h26m-19 9 4 4 8-9"/>
                             </svg>
-                            <h3>Automation &amp; APIs</h3>
-                            <ul>
-                                <li>Cypress · Playwright</li>
-                                <li>Jest · Postman</li>
-                                <li>REST API testing</li>
+                            <h3 id="skill-group-automation-apis-title" class="qa-h3">Automation &amp; APIs</h3>
+                            <ul id="skill-group-automation-apis-list" class="qa-ul">
+                                <li id="skill-group-automation-apis-list-cypress-playwright" class="qa-li">Cypress · Playwright</li>
+                                <li id="skill-group-automation-apis-list-jest-postman" class="qa-li">Jest · Postman</li>
+                                <li id="skill-group-automation-apis-list-rest-api-testing" class="qa-li">REST API testing</li>
                             </ul>
                         </div>
-                        <div class="skill-group">
-                            <svg class="skill-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" aria-hidden="true">
-                                <circle cx="7" cy="6" r="3"/>
-                                <circle cx="25" cy="10" r="3"/>
-                                <circle cx="7" cy="26" r="3"/>
-                                <path d="M7 9v14m18-10v2a7 7 0 0 1-7 7H7"/>
+                        <div id="skill-group-ci-cd-delivery" class="skill-group">
+                            <svg id="skill-group-ci-cd-delivery-skill-icon" class="skill-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" aria-hidden="true">
+                                <circle id="skill-group-ci-cd-delivery-skill-icon-circle" class="qa-circle" cx="7" cy="6" r="3"/>
+                                <circle id="skill-group-ci-cd-delivery-skill-icon-circle-2" class="qa-circle" cx="25" cy="10" r="3"/>
+                                <circle id="skill-group-ci-cd-delivery-skill-icon-circle-3" class="qa-circle" cx="7" cy="26" r="3"/>
+                                <path id="skill-group-ci-cd-delivery-skill-icon-path" class="qa-path" d="M7 9v14m18-10v2a7 7 0 0 1-7 7H7"/>
                             </svg>
-                            <h3>CI/CD &amp; delivery</h3>
-                            <ul>
-                                <li>GitLab CI/CD</li>
-                                <li>Jenkins</li>
-                                <li>Git</li>
+                            <h3 id="skill-group-ci-cd-delivery-title" class="qa-h3">CI/CD &amp; delivery</h3>
+                            <ul id="skill-group-ci-cd-delivery-list" class="qa-ul">
+                                <li id="skill-group-ci-cd-delivery-list-git-lab-ci-cd" class="qa-li">GitLab CI/CD</li>
+                                <li id="skill-group-ci-cd-delivery-list-jenkins" class="qa-li">Jenkins</li>
+                                <li id="skill-group-ci-cd-delivery-list-git" class="qa-li">Git</li>
                             </ul>
                         </div>
-                        <div class="skill-group">
-                            <svg class="skill-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" aria-hidden="true">
-                                <ellipse cx="16" cy="7" rx="12" ry="4"/>
-                                <path d="M4 7v18c0 2.2 5.4 4 12 4s12-1.8 12-4V7M4 16c0 2.2 5.4 4 12 4s12-1.8 12-4"/>
+                        <div id="skill-group-data-platforms" class="skill-group">
+                            <svg id="skill-group-data-platforms-skill-icon" class="skill-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" aria-hidden="true">
+                                <ellipse id="skill-group-data-platforms-skill-icon-ellipse" class="qa-ellipse" cx="16" cy="7" rx="12" ry="4"/>
+                                <path id="skill-group-data-platforms-skill-icon-path" class="qa-path" d="M4 7v18c0 2.2 5.4 4 12 4s12-1.8 12-4V7M4 16c0 2.2 5.4 4 12 4s12-1.8 12-4"/>
                             </svg>
-                            <h3>Data &amp; platforms</h3>
-                            <ul>
-                                <li>MongoDB</li>
-                                <li>Redis</li>
-                                <li>Amazon S3</li>
+                            <h3 id="skill-group-data-platforms-title" class="qa-h3">Data &amp; platforms</h3>
+                            <ul id="skill-group-data-platforms-list" class="qa-ul">
+                                <li id="skill-group-data-platforms-list-mongo-db" class="qa-li">MongoDB</li>
+                                <li id="skill-group-data-platforms-list-redis" class="qa-li">Redis</li>
+                                <li id="skill-group-data-platforms-list-amazon-s3" class="qa-li">Amazon S3</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="tools-note">
-                        <span>Also in my workflow</span>
-                        <span>Jira &amp; Confluence</span>
-                        <span>Exploratory testing</span>
-                        <span>Test planning</span>
-                        <span>Claude</span>
+                    <div id="tools-note" class="tools-note">
+                        <span id="tools-note-also-in-my-workflow" class="qa-span">Also in my workflow</span>
+                        <span id="tools-note-jira-confluence" class="qa-span">Jira &amp; Confluence</span>
+                        <span id="tools-note-exploratory-testing" class="qa-span">Exploratory testing</span>
+                        <span id="tools-note-test-planning" class="qa-span">Test planning</span>
+                        <span id="tools-note-claude" class="qa-span">Claude</span>
                     </div>
                 </div>
             </section>
             <!-- ABOUT -->
             <section class="about-section" id="about" aria-labelledby="about-title">
-                <div class="wrap about-grid">
-                    <div>
-                        <p class="section-label eyebrow"><span class="index">04</span>Beyond the test suite</p>
-                        <h2 id="about-title">Curiosity is<br>part of the job.</h2>
-                        <p class="about-copy">I’m Itay, an engineer based in Herzliya. I enjoy understanding how things work, finding the edge cases, and making the next version better.</p>
-                        <p class="about-copy">Away from the keyboard, that curiosity carries into computers, hardware, design, fashion, and sports. I’m at my best when I’m learning something new and working with a team.</p>
-                        <div class="interest-list" aria-label="Interests">
-                            <span>Technology</span>
-                            <span>Design</span>
-                            <span>Sports</span>
-                            <span>Teamwork</span>
+                <div id="about-wrap" class="wrap about-grid">
+                    <div id="about-wrap-content" class="qa-div">
+                        <p id="about-wrap-content-section-label" class="section-label eyebrow"><span id="about-wrap-content-section-label-index" class="index">04</span>Beyond the test suite</p>
+                        <h2 class="qa-h2" id="about-title">Curiosity is<br id="about-title-break" class="qa-br">part of the job.</h2>
+                        <p id="about-wrap-content-about-copy" class="about-copy">I’m Itay, an engineer based in Herzliya. I enjoy understanding how things work, finding the edge cases, and making the next version better.</p>
+                        <p id="about-wrap-content-about-copy-2" class="about-copy">Away from the keyboard, that curiosity carries into computers, hardware, design, fashion, and sports. I’m at my best when I’m learning something new and working with a team.</p>
+                        <div id="interest-list" class="interest-list" aria-label="Interests">
+                            <span id="interest-list-technology" class="qa-span">Technology</span>
+                            <span id="interest-list-design" class="qa-span">Design</span>
+                            <span id="interest-list-sports" class="qa-span">Sports</span>
+                            <span id="interest-list-teamwork" class="qa-span">Teamwork</span>
                         </div>
                     </div>
-                    <div class="about-details">
-                        <p class="education-label eyebrow">Learning &amp; foundations</p>
-                        <div class="education-item">
-                            <p class="date">2023</p>
-                            <h3>Bamas</h3>
-                            <p>Software QA Automation Engineer training.<br>Testing methodologies, automation frameworks, and CI/CD.</p>
+                    <div id="about-details" class="about-details">
+                        <p id="education-label" class="education-label eyebrow">Learning &amp; foundations</p>
+                        <div id="education-item-bamas" class="education-item">
+                            <p id="education-item-bamas-date" class="date">2023</p>
+                            <h3 id="education-item-bamas-title" class="qa-h3">Bamas</h3>
+                            <p id="education-item-bamas-description" class="qa-p">Software QA Automation Engineer training.<br id="education-item-bamas-description-break" class="qa-br">Testing methodologies, automation frameworks, and CI/CD.</p>
                         </div>
-                        <div class="education-item">
-                            <p class="date">2020 — 2023</p>
-                            <h3>Handasaim Herzliya</h3>
-                            <p>Computer Science, App Programming, and Physics.</p>
+                        <div id="education-item-handasaim-herzliya" class="education-item">
+                            <p id="education-item-handasaim-herzliya-date" class="date">2020 — 2023</p>
+                            <h3 id="education-item-handasaim-herzliya-title" class="qa-h3">Handasaim Herzliya</h3>
+                            <p id="education-item-handasaim-herzliya-description" class="qa-p">Computer Science, App Programming, and Physics.</p>
                         </div>
-                        <div class="languages">
-                            <p>Hebrew <span>/ Native</span></p>
-                            <p>English <span>/ Fluent</span></p>
+                        <div id="languages" class="languages">
+                            <p id="languages-description" class="qa-p">Hebrew <span id="languages-description-native" class="qa-span">/ Native</span></p>
+                            <p id="languages-description-2" class="qa-p">English <span id="languages-description-2-fluent" class="qa-span">/ Fluent</span></p>
                         </div>
                     </div>
                 </div>
             </section>
             <!-- CONTACT: update the email here and in the copy button data attribute. -->
             <section class="contact-section" id="contact" aria-labelledby="contact-title">
-                <div class="wrap">
-                    <p class="section-label eyebrow"><span class="index">05</span>Next conversation</p>
-                    <div class="contact-grid">
-                        <h2 id="contact-title">Let’s build<br>with confidence.</h2>
-                        <div class="contact-details">
-                            <p>Have a role, a project, or an interesting engineering challenge? I’d love to hear about it.</p>
-                            <a class="contact-email" href="mailto:itaysamsong@gmail.com"><span>itaysamsong@gmail.com</span><svg class="arrow" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
-                            <div class="contact-bottom">
-                                <button class="copy-email" id="copy-email" type="button" data-email="itaysamsong@gmail.com" hidden><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><rect x="5" y="5" width="8" height="8" rx="1"/><path d="M10 3H3v7"/></svg><span id="copy-label">Copy email</span></button>
-                                <div class="socials">
-                                    <a href="https://www.linkedin.com/in/itay-hakim-b00a9241a" target="_blank" rel="noopener noreferrer">LinkedIn ↗<span class="sr-only"> (opens in a new tab)</span></a>
-                                    <a href="https://github.com/ItayHakim" target="_blank" rel="noopener noreferrer">GitHub ↗<span class="sr-only"> (opens in a new tab)</span></a>
+                <div id="contact-wrap" class="wrap">
+                    <p id="contact-wrap-section-label" class="section-label eyebrow"><span id="contact-wrap-section-label-index" class="index">05</span>Next conversation</p>
+                    <div id="contact-grid" class="contact-grid">
+                        <h2 class="qa-h2" id="contact-title">Let’s build<br id="contact-title-break" class="qa-br">with confidence.</h2>
+                        <div id="contact-details" class="contact-details">
+                            <p id="contact-details-description" class="qa-p">Have a role, a project, or an interesting engineering challenge? I’d love to hear about it.</p>
+                            <a id="contact-email" class="contact-email" href="mailto:itaysamsong@gmail.com"><span id="contact-email-itaysamsong-gmail-com" class="qa-span">itaysamsong@gmail.com</span><svg id="contact-email-arrow" class="arrow" aria-hidden="true"><use id="contact-email-arrow-reference" class="qa-use" href="#arrow-up-right"/></svg></a>
+                            <div id="contact-bottom" class="contact-bottom">
+                                <button class="copy-email" id="copy-email" type="button" data-email="itaysamsong@gmail.com" hidden><svg id="copy-email-icon" class="qa-svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><rect id="copy-email-icon-rect" class="qa-rect" x="5" y="5" width="8" height="8" rx="1"/><path id="copy-email-icon-path" class="qa-path" d="M10 3H3v7"/></svg><span class="qa-span" id="copy-label">Copy email</span></button>
+                                <div id="socials" class="socials">
+                                    <a id="contact-linkedin" class="qa-a" href="https://www.linkedin.com/in/itay-hakim-b00a9241a" target="_blank" rel="noopener noreferrer">LinkedIn ↗<span id="contact-linkedin-sr-only" class="sr-only"> (opens in a new tab)</span></a>
+                                    <a id="contact-github" class="qa-a" href="https://github.com/ItayHakim" target="_blank" rel="noopener noreferrer">GitHub ↗<span id="contact-github-sr-only" class="sr-only"> (opens in a new tab)</span></a>
                                 </div>
                             </div>
                             <p class="sr-only" id="copy-status" role="status" aria-live="polite"></p>
                         </div>
                     </div>
-                    <footer class="site-footer">
-                        <p class="footer-signature"><svg aria-hidden="true"><use href="#asterisk"/></svg>© <span id="year">2026</span> Itay Hakim</p>
-                        <p class="footer-note">Built with care. Tested with intent.</p>
-                        <a class="to-top" href="#top">Back to top <svg class="arrow" aria-hidden="true"><use href="#arrow-right"/></svg></a>
+                    <footer id="site-footer" class="site-footer">
+                        <p id="footer-signature" class="footer-signature"><svg id="footer-signature-icon" class="qa-svg" aria-hidden="true"><use id="footer-signature-icon-reference" class="qa-use" href="#asterisk"/></svg>© <span class="qa-span" id="year">2026</span> Itay Hakim</p>
+                        <p id="footer-note" class="footer-note">Built with care. Tested with intent.</p>
+                        <a id="back-to-top" class="to-top" href="#top">Back to top <svg id="back-to-top-arrow" class="arrow" aria-hidden="true"><use id="back-to-top-arrow-reference" class="qa-use" href="#arrow-right"/></svg></a>
                     </footer>
                 </div>
             </section>

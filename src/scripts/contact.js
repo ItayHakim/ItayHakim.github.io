@@ -6,6 +6,8 @@ const contactSelectors = {
 
 function copyEmailWithTextField(email, copyButton) {
     const textField = document.createElement("textarea");
+    textField.id = "copy-email-fallback";
+    textField.className = "copy-email-fallback";
     textField.value = email;
     textField.setAttribute("readonly", "");
     textField.style.cssText = "position:fixed;left:-9999px;top:0";

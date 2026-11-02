@@ -1,6 +1,6 @@
 const navigationSelectors = {
     menuButton: "#menu-button",
-    menuSymbol: "#menu-button span",
+    menuSymbol: "#menu-symbol",
     links: "#navigation"
 };
 

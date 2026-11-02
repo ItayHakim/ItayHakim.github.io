@@ -11,6 +11,7 @@ function createParticleTrail(particleGroup) {
         const segment = document.createElementNS(orbitConfig.svgNamespace, "path");
         const fade = 1 - index / orbitConfig.trailSegments;
 
+        segment.id = `${particleGroup.id}-trail-${index + 1}`;
         segment.setAttribute("class", "orbit-trail");
         segment.setAttribute("stroke-width", (0.5 + 2.6 * fade).toFixed(2));
         segment.setAttribute("opacity", (0.48 * fade * fade).toFixed(3));

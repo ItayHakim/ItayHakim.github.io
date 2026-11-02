@@ -46,6 +46,14 @@ There is no installation or build step. The scripts use ordinary JavaScript and 
 
 The four stylesheets keep their original order. Responsive rules load last so they can override the desktop styles.
 
+## QA selectors
+
+Every HTML and inline SVG element has a unique, explicit `id` and a nonempty `class`, including metadata and decorative elements. Existing styling classes are preserved; `qa-*` classes identify otherwise unstyled elements.
+
+Use IDs for individual test targets, for example `#navigation-work`, `#hero-work-link`, `#contact-email`, and `#copy-email`. Keep IDs stable when changing text or rearranging content, and give new elements their own IDs and classes.
+
+JavaScript-created elements follow the same rule: walkthrough icon parts use `flow-register-*`, `flow-select-*`, or `flow-verify-*` IDs, orbit trails use `orbit-electron-{left|right|outer}-trail-{1..N}`, and the temporary clipboard field uses `#copy-email-fallback`.
+
 ## Publish
 
 Commit and push `index.html`, `src/` and `assets/` together to the branch configured for GitHub Pages. The HTML file now depends on those folders.
