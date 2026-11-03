@@ -1,14 +1,14 @@
 const orbitLayers = {
     ui: {
-        track: "orbit-left",
+        track: "orbit-right",
         label: "orbit-label-ui",
-        particle: "orbit-electron-left",
+        particle: "orbit-electron-right",
         description: "Real user journeys. Tested from the first click to the final assertion."
     },
     api: {
-        track: "orbit-right",
+        track: "orbit-left",
         label: "orbit-label-api",
-        particle: "orbit-electron-right",
+        particle: "orbit-electron-left",
         description: "Beyond the interface. Checking responses, integrations, and the details between systems."
     },
     ci: {

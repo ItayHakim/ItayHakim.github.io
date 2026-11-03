@@ -1,7 +1,8 @@
 const siteConfig = {
     mobileScreen: "(max-width: 600px)",
     reducedMotion: "(prefers-reduced-motion: reduce)",
-    copyMessageDuration: 3000
+    copyMessageDuration: 3000,
+    metricCountDuration: 1600
 };
 
 const orbitConfig = {

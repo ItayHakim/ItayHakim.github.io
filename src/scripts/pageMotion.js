@@ -22,6 +22,53 @@ function setupMotionPreferences() {
     preference.addEventListener("change", applyPreference);
 }
 
+function setupMetricCountUp() {
+    const metric = document.getElementById("metric-end-to-end-tests-metric-value");
+    if (!metric || isMotionReduced() || !("IntersectionObserver" in window)) return;
+
+    const finalText = metric.textContent.trim();
+    const target = Number.parseInt(finalText, 10);
+    if (!Number.isFinite(target) || target <= 0) return;
+    const suffix = finalText.replace(/^\d+/, "");
+    let started = false;
+    let startTime = null;
+    let animationFrame;
+
+    function finishCount() {
+        started = true;
+        cancelAnimationFrame(animationFrame);
+        observer.disconnect();
+        metric.textContent = finalText;
+        document.removeEventListener("site:motion-change", handleMotionChange);
+        window.removeEventListener("beforeprint", finishCount);
+    }
+
+    function handleMotionChange() {
+        if (isMotionReduced()) finishCount();
+    }
+
+    function updateCount(time) {
+        if (startTime === null) startTime = time;
+        const progress = Math.min(1, (time - startTime) / siteConfig.metricCountDuration);
+        const easedProgress = 1 - Math.pow(1 - progress, 3);
+        metric.textContent = Math.floor(target * easedProgress) + suffix;
+        if (progress < 1) animationFrame = requestAnimationFrame(updateCount);
+        else finishCount();
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        if (started || !entries.some(entry => entry.isIntersecting)) return;
+        started = true;
+        observer.disconnect();
+        animationFrame = requestAnimationFrame(updateCount);
+    }, { threshold: 0.2 });
+
+    metric.textContent = "0" + suffix;
+    observer.observe(metric);
+    document.addEventListener("site:motion-change", handleMotionChange);
+    window.addEventListener("beforeprint", finishCount);
+}
+
 function setupPageMotion() {
     const header = document.querySelector(pageMotionSelectors.header);
     const progress = document.querySelector(pageMotionSelectors.progress);

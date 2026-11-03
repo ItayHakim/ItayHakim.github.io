@@ -7,7 +7,8 @@ const walkthroughSelectors = {
     stepAssertion: "#step-assertion",
     stepIcon: "#flow-icon",
     visual: "#flow-visual",
-    journey: ".flow-journey-stop"
+    journey: ".flow-journey-stop",
+    progressDots: "#window-dots > span"
 };
 
 function showWalkthroughStep(stepIndex, focusTab = false) {
@@ -19,6 +20,11 @@ function showWalkthroughStep(stepIndex, focusTab = false) {
         const isSelected = index === stepIndex;
         tab.setAttribute("aria-selected", String(isSelected));
         tab.tabIndex = isSelected ? 0 : -1;
+    });
+
+    const dots = document.querySelectorAll(selectors.progressDots);
+    dots.forEach((dot, index) => {
+        dot.classList.toggle("is-active", index <= stepIndex);
     });
 
     document.querySelector(selectors.panel).setAttribute("aria-labelledby", tabs[stepIndex].id);
