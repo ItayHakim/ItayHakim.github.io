@@ -41,6 +41,14 @@
     .about-grid {
         gap: 65px;
     }
+    .orbit-explorer-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .orbit-layer-description {
+        min-height: 61px;
+    }
 }
 
 @media (max-width: 800px) {
@@ -51,7 +59,10 @@
         height: 72px;
     }
     .nav-links {
-        gap: 23px;
+        gap: 18px;
+    }
+    .nav-row {
+        gap: 18px;
     }
     .hero {
         padding-top: 32px;
@@ -83,6 +94,14 @@
     }
     .art-top {
         font-size: 8px;
+        left: 64px;
+    }
+    .hero-art {
+        border-top-left-radius: 90px;
+    }
+    .orbit-explorer {
+        margin-inline: 10px;
+        padding: 16px;
     }
     .art-bottom {
         align-items: start;
@@ -158,9 +177,7 @@
         padding: 25px;
     }
     .skill-group:nth-child(3) {
-        padding-left: 0;
-        border-left: 0;
-        border-top: 1px solid var(--line);
+        padding-left: 25px;
     }
     .skill-group:nth-child(4) {
         border-top: 1px solid var(--line);
@@ -205,14 +222,16 @@
         height: auto;
         min-height: 68px;
         flex-wrap: wrap;
-        gap: 0;
+        gap: 10px;
         padding-block: 13px;
     }
     .menu-button {
         display: block;
         font-size: 11px;
+        order: 3;
     }
     .nav-links {
+        order: 4;
         width: 100%;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -252,6 +271,28 @@
         width: 100%;
         max-width: none;
         aspect-ratio: 1.28;
+    }
+    .hero-visual {
+        max-width: none;
+    }
+    .orbit-explorer-heading {
+        flex-direction: row;
+        align-items: center;
+    }
+    .orbit-explorer {
+        margin-inline: 12px;
+    }
+    .orbit-explorer-heading .eyebrow {
+        max-width: 105px;
+        font-size: 8px;
+    }
+    .orbit-layer-description {
+        min-height: 61px;
+        font-size: 11px;
+    }
+    .experience-section, .contact-section {
+        width: calc(100% - 16px);
+        border-radius: 24px;
     }
     .orbit-art {
         width: 100%;
@@ -401,6 +442,9 @@
     .skill-group {
         padding: 25px 19px;
     }
+    .skill-group:first-child, .skill-group:nth-child(3) {
+        padding-left: 19px;
+    }
     .skill-group h3 {
         font-size: 13px;
     }
@@ -461,6 +505,13 @@
 }
 
 @media (max-width: 370px) {
+    .nav-row { gap: 8px; }
+    .brand { font-size: 14px; gap: 7px; }
+    .brand-mark { width: 23px; height: 23px; }
+    .menu-button { padding: 9px 11px; }
+    .orbit-explorer { margin-inline: 0; padding: 14px; }
+    .orbit-layer-button { min-width: 34px; padding-inline: 8px; }
+    .project-info h3 { font-size: 32px; }
     .stack-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -479,19 +530,23 @@
     .orbit-trail {
         display: none;
     }
+    .reveal-ready { opacity: 1; translate: none; }
+    .demo-frame { transform: none !important; }
 }
 
 @media print {
-    .site-header, .hero-art, .hero-actions, .walkthrough, .copy-email, .to-top {
+    .site-header, .hero-visual, .hero-actions, .walkthrough, .copy-email, .to-top {
         display: none !important;
     }
-    body, .dark, .about-section {
+    body, .dark, .about-section, .contact-section {
         background: white !important;
         color: black !important;
     }
     .wrap {
         width: 100%;
     }
+    .reveal-ready { opacity: 1 !important; translate: none; }
+    .contact-section { margin-top: 0; }
     .section, .about-section, .contact-section {
         padding-block: 24px;
     }

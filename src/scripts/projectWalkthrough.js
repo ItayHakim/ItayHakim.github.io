@@ -5,7 +5,9 @@ const walkthroughSelectors = {
     stepTitle: "#step-title",
     stepDescription: "#step-description",
     stepAssertion: "#step-assertion",
-    stepIcon: "#flow-icon"
+    stepIcon: "#flow-icon",
+    visual: "#flow-visual",
+    journey: ".flow-journey-stop"
 };
 
 function showWalkthroughStep(stepIndex, focusTab = false) {
@@ -26,6 +28,21 @@ function showWalkthroughStep(stepIndex, focusTab = false) {
     document.querySelector(selectors.stepAssertion).textContent = step.assertion;
     // The icons are fixed SVG markup from walkthroughData.js.
     document.querySelector(selectors.stepIcon).innerHTML = step.icon;
+    document.querySelector(selectors.visual).dataset.step = String(stepIndex);
+    document.querySelectorAll(selectors.journey).forEach(stop => {
+        const index = Number(stop.dataset.journeyStep);
+        stop.classList.toggle("is-current", index === stepIndex);
+        stop.classList.toggle("is-complete", index < stepIndex);
+    });
+
+    const panel = document.querySelector(selectors.panel);
+    if (!isMotionReduced() && panel.animate) {
+        panel.getAnimations().forEach(animation => animation.cancel());
+        panel.animate([
+            { opacity: 0.3, transform: "translateY(8px)" },
+            { opacity: 1, transform: "translateY(0)" }
+        ], { duration: 280, easing: "ease-out" });
+    }
 
     if (focusTab) {
         tabs[stepIndex].focus();

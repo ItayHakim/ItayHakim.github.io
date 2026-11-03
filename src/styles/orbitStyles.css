@@ -4,17 +4,18 @@
     width: 100%;
     max-width: 560px;
     justify-self: end;
-    border-radius: 8px;
+    border-radius: 120px 24px 24px 24px;
     background: #e8ecdf;
     background-image: linear-gradient(#cdd5c548 1px, transparent 1px),linear-gradient(90deg,#cdd5c548 1px,transparent 1px);
     background-size: 39px 39px;
+    border: 1px solid #d8e0cd;
     overflow: hidden;
 }
 
 .art-top {
     position: absolute;
     top: 25px;
-    left: 25px;
+    left: 83px;
     right: 25px;
     display: flex;
     justify-content: space-between;
@@ -42,7 +43,8 @@
     stroke: #657858;
     stroke-width: .7;
     fill: none;
-    opacity: .45;
+    opacity: .4;
+    transition: opacity .35s, stroke .35s, stroke-width .35s;
 }
 
 .orbit-electron {
@@ -65,6 +67,15 @@
 
 .orbit-label {
     cursor: default;
+}
+
+.orbit-label rect[role="button"] {
+    cursor: pointer;
+    outline: none;
+}
+
+.orbit-label rect[role="button"]:focus-visible {
+    filter: drop-shadow(0 0 4px #a3cb66) drop-shadow(0 0 9px #b9dc7680);
 }
 
 .orbit-frost {

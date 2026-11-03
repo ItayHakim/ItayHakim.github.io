@@ -73,7 +73,6 @@ function drawOrbitParticles(particles, elapsedTime) {
 
 function setupOrbitAnimation() {
     const particles = getOrbitParticles();
-    const reducedMotion = window.matchMedia(siteConfig.reducedMotion);
     const illustration = document.querySelector(orbitSelectors.illustration);
     let animationFrame;
     let previousTime = null;
@@ -94,14 +93,14 @@ function setupOrbitAnimation() {
         cancelAnimationFrame(animationFrame);
         previousTime = null;
 
-        if (!reducedMotion.matches && !document.hidden && isVisible) {
+        if (!isMotionReduced() && !document.hidden && isVisible) {
             animationFrame = requestAnimationFrame(animateParticles);
         }
     }
 
     drawOrbitParticles(particles, 0);
     updateAnimationState();
-    reducedMotion.addEventListener("change", updateAnimationState);
+    document.addEventListener("site:motion-change", updateAnimationState);
     document.addEventListener("visibilitychange", updateAnimationState);
 
     const observer = new IntersectionObserver(entries => {

@@ -32,7 +32,8 @@
     --lime: #d6f284;
     --soft: #e9eddf;
     --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-    --radius: 5px;
+    --radius: 100px;
+    --ease-out: cubic-bezier(.2, .7, .2, 1);
 }
 
 * {
@@ -143,12 +144,13 @@ h1, h2, h3, p {
     z-index: 10;
     top: 0;
     background: rgba(244,244,237,.94);
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid transparent;
     backdrop-filter: blur(16px);
+    transition: border-color .25s, box-shadow .25s;
 }
 
 .nav-row {
-    height: 82px;
+    height: 86px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -156,6 +158,7 @@ h1, h2, h3, p {
 }
 
 .brand {
+    order: 1;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -174,6 +177,8 @@ h1, h2, h3, p {
 }
 
 .nav-links {
+    order: 2;
+    margin-left: auto;
     display: flex;
     align-items: center;
     gap: 35px;
@@ -199,15 +204,18 @@ h1, h2, h3, p {
     transition: transform .2s;
 }
 
-.nav-links > a:hover::after {
+.nav-links > a:hover::after,
+.nav-links > a[aria-current="location"]::after {
     transform: scaleX(1);
 }
 
 .nav-contact {
     display: flex;
     align-items: center;
-    gap: 24px;
-    border-bottom: 1px solid var(--ink);
+    gap: 18px;
+    border: 1px solid var(--ink);
+    border-radius: 100px;
+    padding: 11px 18px !important;
 }
 
 .nav-contact .arrow {
@@ -216,15 +224,16 @@ h1, h2, h3, p {
 }
 
 .menu-button {
+    order: 4;
     display: none;
     border: 1px solid var(--line);
     background: transparent;
-    border-radius: 3px;
+    border-radius: 100px;
     padding: 10px 14px;
 }
 
 .hero {
-    padding-top: 51px;
+    padding-top: 38px;
 }
 
 .hero-meta {
@@ -245,14 +254,20 @@ h1, h2, h3, p {
     height: 6px;
     border-radius: 100%;
     background: var(--green);
+    animation: location-pulse 4s ease-in-out infinite;
+}
+
+@keyframes location-pulse {
+    0%, 100% { background-color: var(--green); }
+    50% { background-color: #8eaf60; }
 }
 
 .hero-grid {
     display: grid;
     grid-template-columns: 1.1fr 1fr;
     align-items: center;
-    gap: 32px;
-    padding: 43px 0 55px;
+    gap: 48px;
+    padding: 48px 0 52px;
 }
 
 .intro-name {
@@ -272,7 +287,7 @@ h1, h2, h3, p {
 }
 
 h1 {
-    font-size: clamp(62px, 7.45vw, 107px);
+    font-size: clamp(62px, 8.1vw, 116px);
     line-height: .99;
     font-weight: 800;
     letter-spacing: -.075em;
@@ -280,6 +295,22 @@ h1 {
 
 h1 .second-line {
     display: block;
+    position: relative;
+    isolation: isolate;
+    width: fit-content;
+}
+
+h1 .second-line::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: .03em;
+    left: .02em;
+    width: 96%;
+    height: .2em;
+    border-radius: 40% 20% 30% 10%;
+    background: var(--lime);
+    transform: rotate(-2deg);
 }
 
 h1 .period {
@@ -307,7 +338,7 @@ h1 .period {
     align-items: center;
     justify-content: center;
     gap: 31px;
-    padding: 17px 22px;
+    padding: 18px 25px;
     border: 1px solid var(--ink);
     border-radius: var(--radius);
     font-size: 12px;

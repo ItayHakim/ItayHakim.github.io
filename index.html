@@ -16,6 +16,7 @@
         <link id="link-base-styles" class="qa-link" rel="stylesheet" href="src/styles/baseStyles.css">
         <link id="link-orbit-styles" class="qa-link" rel="stylesheet" href="src/styles/orbitStyles.css">
         <link id="link-section-styles" class="qa-link" rel="stylesheet" href="src/styles/sectionStyles.css">
+        <link id="link-motion-styles" class="qa-link" rel="stylesheet" href="src/styles/motionStyles.css">
         <link id="link-responsive-styles" class="qa-link" rel="stylesheet" href="src/styles/responsiveStyles.css">
         <!-- Defer keeps the file order and runs these scripts after the HTML is ready. -->
         <script id="script-site-config" class="qa-script" defer src="src/config/siteConfig.js"></script>
@@ -23,6 +24,8 @@
         <script id="script-navigation" class="qa-script" defer src="src/scripts/navigation.js"></script>
         <script id="script-project-walkthrough" class="qa-script" defer src="src/scripts/projectWalkthrough.js"></script>
         <script id="script-contact" class="qa-script" defer src="src/scripts/contact.js"></script>
+        <script id="script-page-motion" class="qa-script" defer src="src/scripts/pageMotion.js"></script>
+        <script id="script-orbit-explorer" class="qa-script" defer src="src/scripts/orbitExplorer.js"></script>
         <script id="script-orbit-animation" class="qa-script" defer src="src/scripts/orbitAnimation.js"></script>
         <script id="script-main" class="qa-script" defer src="src/main.js"></script>
     </head>
@@ -44,6 +47,7 @@
         <a id="skip-link" class="skip" href="#main">Skip to content</a>
         <!-- NAVIGATION -->
         <header id="site-header" class="site-header">
+            <div id="reading-progress" class="reading-progress" aria-hidden="true"></div>
             <div id="site-header-wrap" class="wrap nav-row">
                 <a id="brand" class="brand" href="#top" aria-label="Itay Hakim, back to top"><svg id="brand-mark" class="brand-mark" aria-hidden="true"><use id="brand-mark-reference" class="qa-use" href="#asterisk"/></svg><span id="brand-itay-hakim" class="qa-span">Itay Hakim</span></a>
                 <button class="menu-button" id="menu-button" type="button" aria-expanded="true" aria-controls="navigation" hidden>Menu <span id="menu-symbol" class="qa-span" aria-hidden="true">+</span></button>
@@ -72,7 +76,8 @@
                             <a id="hero-linkedin" class="text-link" href="https://www.linkedin.com/in/itay-hakim-b00a9241a" target="_blank" rel="noopener noreferrer">LinkedIn <svg id="hero-linkedin-arrow" class="arrow" aria-hidden="true"><use id="hero-linkedin-arrow-reference" class="qa-use" href="#arrow-up-right"/></svg><span id="hero-linkedin-sr-only" class="sr-only"> (opens in a new tab)</span></a>
                         </div>
                     </div>
-                    <div id="hero-art" class="hero-art enter-delayed" role="img" aria-label="An illustration of UI, API and CI testing connected around a quality check mark">
+                    <div id="hero-visual" class="hero-visual enter-delayed">
+                    <div id="hero-art" class="hero-art" role="img" aria-label="An illustration of UI, API and CI testing connected around a quality check mark">
                         <div id="art-top" class="art-top eyebrow">
                             <span id="art-top-quality-is-a-process" class="qa-span">Quality is a process.</span>
                             <span id="cross" class="cross" aria-hidden="true">+</span>
@@ -169,6 +174,18 @@
                             <span id="art-bottom-eyebrow" class="eyebrow">Think. Test.<br id="art-bottom-eyebrow-break" class="qa-br">Improve. Repeat.</span>
                         </div>
                     </div>
+                    <div id="orbit-explorer" class="orbit-explorer" hidden>
+                        <div id="orbit-explorer-heading" class="orbit-explorer-heading">
+                            <span id="orbit-explorer-label" class="eyebrow">One mindset. Every layer.</span>
+                            <div id="orbit-layer-buttons" class="orbit-layer-buttons" role="group" aria-label="Explore a testing layer">
+                                <button id="orbit-layer-ui" class="orbit-layer-button" type="button" aria-pressed="true" aria-controls="orbit-layer-description" data-layer="ui">UI</button>
+                                <button id="orbit-layer-api" class="orbit-layer-button" type="button" aria-pressed="false" aria-controls="orbit-layer-description" data-layer="api">API</button>
+                                <button id="orbit-layer-ci" class="orbit-layer-button" type="button" aria-pressed="false" aria-controls="orbit-layer-description" data-layer="ci">CI/CD</button>
+                            </div>
+                        </div>
+                        <p id="orbit-layer-description" class="orbit-layer-description" aria-live="polite">Real user journeys. Tested from the first click to the final assertion.</p>
+                    </div>
+                    </div>
                 </div>
                 <div id="hero-foot" class="hero-foot">
                     <p id="hero-foot-label" class="hero-foot-label eyebrow"><svg id="hero-foot-label-icon" class="qa-svg" aria-hidden="true"><use id="hero-foot-label-icon-reference" class="qa-use" href="#asterisk"/></svg>Thoughtful testing. Dependable engineering.</p>
@@ -216,7 +233,7 @@
                                 <button class="flow-tab" id="tab-select" type="button" role="tab" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-step="1">02 Select</button>
                                 <button class="flow-tab" id="tab-verify" type="button" role="tab" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-step="2">03 Verify</button>
                             </div>
-                            <div id="flow-visual" class="flow-visual" aria-hidden="true">
+                            <div id="flow-visual" class="flow-visual" data-step="0" aria-hidden="true">
                                 <div id="demo-frame" class="demo-frame">
                                     <div id="demo-bar" class="demo-bar">
                                         <i id="demo-bar-i" class="qa-i"></i>
@@ -237,6 +254,13 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div id="flow-journey" class="flow-journey" aria-hidden="true">
+                                <span id="flow-journey-account" class="flow-journey-stop is-current" data-journey-step="0">Account</span>
+                                <span id="flow-journey-connector-first" class="flow-journey-connector"></span>
+                                <span id="flow-journey-product" class="flow-journey-stop" data-journey-step="1">Product</span>
+                                <span id="flow-journey-connector-second" class="flow-journey-connector"></span>
+                                <span id="flow-journey-cart" class="flow-journey-stop" data-journey-step="2">Cart</span>
                             </div>
                             <div class="flow-panel" id="flow-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-register">
                                 <span class="step-number" id="step-number">STEP 01 / 03</span>
@@ -423,7 +447,10 @@
                         <h2 class="qa-h2" id="contact-title">Let’s build<br id="contact-title-break" class="qa-br">with confidence.</h2>
                         <div id="contact-details" class="contact-details">
                             <p id="contact-details-description" class="qa-p">Have a role, a project, or an interesting engineering challenge? I’d love to hear about it.</p>
-                            <a id="contact-email" class="contact-email" href="mailto:itaysamsong@gmail.com"><span id="contact-email-itaysamsong-gmail-com" class="qa-span">itaysamsong@gmail.com</span><svg id="contact-email-arrow" class="arrow" aria-hidden="true"><use id="contact-email-arrow-reference" class="qa-use" href="#arrow-up-right"/></svg></a>
+                            <a id="contact-email" class="contact-email" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=itaysamsong%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Write an email to itaysamsong@gmail.com in Gmail (opens in a new tab)" title="Write an email in Gmail">
+                                <span id="contact-email-itaysamsong-gmail-com" class="contact-email-address">itaysamsong@gmail.com</span>
+                                <span id="contact-email-arrow" class="contact-email-compose" aria-hidden="true"><svg id="contact-email-arrow-icon" class="arrow" aria-hidden="true"><use id="contact-email-arrow-reference" class="qa-use" href="#arrow-up-right"/></svg></span>
+                            </a>
                             <div id="contact-bottom" class="contact-bottom">
                                 <button class="copy-email" id="copy-email" type="button" data-email="itaysamsong@gmail.com" hidden><svg id="copy-email-icon" class="qa-svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><rect id="copy-email-icon-rect" class="qa-rect" x="5" y="5" width="8" height="8" rx="1"/><path id="copy-email-icon-path" class="qa-path" d="M10 3H3v7"/></svg><span class="qa-span" id="copy-label">Copy email</span></button>
                                 <div id="socials" class="socials">
