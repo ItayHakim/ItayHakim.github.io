@@ -753,6 +753,7 @@ h2 {
 
 .contact-bottom {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 15px;
@@ -777,12 +778,14 @@ h2 {
 
 .socials {
     display: flex;
-    gap: 19px;
+    flex-wrap: wrap;
+    gap: 6px 19px;
     font-size: 11px;
 }
 
 .socials a {
     padding-block: 6px;
+    white-space: nowrap;
 }
 
 .socials a:hover {

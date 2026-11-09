@@ -42,6 +42,7 @@ There is no installation or build step. The scripts use ordinary JavaScript and 
 ## Make changes
 
 - Edit the page content and SVG illustration in `index.html`.
+- Replace `assets/Itay-Hakim-Resume.pdf` to update the resume downloaded from the contact section.
 - Edit the project walkthrough text in `src/data/walkthroughData.js`.
 - Change orbit speed, trail length or trail segments in `src/config/siteConfig.js`. A larger `duration` means a slower orbit.
 - Change the frosted-glass glow in `.orbit-glass-particles` in `src/styles/orbitStyles.css`. The SVG frost and blur filters are in `index.html`.
