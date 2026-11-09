@@ -207,75 +207,155 @@
                         </div>
                         <p id="work-wrap-section-top-section-description" class="section-description">A closer look at how I turn real user journeys into clear, maintainable automated tests.</p>
                     </div>
-                    <article id="project" class="project">
-                        <div id="project-info" class="project-info">
-                            <div id="project-type" class="project-type eyebrow"><span id="small-dot" class="small-dot" aria-hidden="true"></span>Public project / Web automation</div>
-                            <h3 id="project-info-title" class="qa-h3">Demowebshop<br id="project-info-title-break" class="qa-br">Automation.</h3>
-                            <p id="project-info-description" class="qa-p">An end-to-end testing project for Demo Web Shop. From creating an account to verifying a configured product in the cart, it checks the details that make a user journey work.</p>
-                            <div id="tags" class="tags" aria-label="Project technologies">
-                                <span id="tags-tag" class="tag">Playwright</span>
-                                <span id="tags-tag-2" class="tag">TypeScript</span>
-                                <span id="tags-tag-3" class="tag">Fixtures &amp; helpers</span>
-                            </div>
-                            <a id="project-repository-link" class="text-link" href="https://github.com/ItayHakim/Demowebshop-Automation-Project" target="_blank" rel="noopener noreferrer">Explore the repository <svg id="project-repository-link-arrow" class="arrow" aria-hidden="true"><use id="project-repository-link-arrow-reference" class="qa-use" href="#arrow-up-right"/></svg><span id="project-repository-link-sr-only" class="sr-only"> (opens in a new tab)</span></a>
+                    <div id="project-showcase" class="project-showcase">
+                        <div id="project-bookmarks" class="project-bookmarks" role="tablist" aria-label="Choose a project" aria-orientation="vertical" hidden>
+                            <button id="project-tab-demo" class="project-bookmark" type="button" role="tab" aria-selected="true" aria-controls="project">
+                                <span id="project-tab-demo-number" class="project-bookmark-number" aria-hidden="true">01</span>
+                                <span id="project-tab-demo-name" class="project-bookmark-name">Demo Web Shop</span>
+                            </button>
+                            <button id="project-tab-booker" class="project-bookmark" type="button" role="tab" aria-selected="false" aria-controls="booker-project" tabindex="-1">
+                                <span id="project-tab-booker-number" class="project-bookmark-number" aria-hidden="true">02</span>
+                                <span id="project-tab-booker-name" class="project-bookmark-name">Restful Booker</span>
+                            </button>
                         </div>
-                        <div id="walkthrough" class="walkthrough dark">
-                            <div id="walkthrough-top" class="walkthrough-top">
-                                <div id="window-dots" class="window-dots" aria-hidden="true">
-                                    <span id="window-dots-text" class="qa-span is-active"></span>
-                                    <span id="window-dots-text-2" class="qa-span"></span>
-                                    <span id="window-dots-text-3" class="qa-span"></span>
+                        <article id="project" class="project project-panel" data-walkthrough="demo-web-shop" aria-labelledby="project-info-title">
+                            <div id="project-info" class="project-info">
+                                <div id="project-type" class="project-type eyebrow"><span id="small-dot" class="small-dot" aria-hidden="true"></span>Public project / Web automation</div>
+                                <h3 id="project-info-title" class="qa-h3">Demowebshop<br id="project-info-title-break" class="qa-br">Automation.</h3>
+                                <p id="project-info-description" class="qa-p">An end-to-end testing project for Demo Web Shop. From creating an account to verifying a configured product in the cart, it checks the details that make a user journey work.</p>
+                                <div id="tags" class="tags" aria-label="Project technologies">
+                                    <span id="tags-tag" class="tag">Playwright</span>
+                                    <span id="tags-tag-2" class="tag">TypeScript</span>
+                                    <span id="tags-tag-3" class="tag">Fixtures &amp; helpers</span>
                                 </div>
-                                <span id="walkthrough-top-eyebrow" class="eyebrow">Test flow walkthrough</span>
+                                <a id="project-repository-link" class="text-link" href="https://github.com/ItayHakim/Demowebshop-Automation-Project" target="_blank" rel="noopener noreferrer">Explore the repository <svg id="project-repository-link-arrow" class="arrow" aria-hidden="true"><use id="project-repository-link-arrow-reference" class="qa-use" href="#arrow-up-right"/></svg><span id="project-repository-link-sr-only" class="sr-only"> (opens in a new tab)</span></a>
                             </div>
-                            <div id="flow-tabs" class="flow-tabs" role="tablist" aria-label="Explore the test flow">
-                                <button class="flow-tab" id="tab-register" type="button" role="tab" aria-selected="true" aria-controls="flow-panel" data-step="0">01 Register</button>
-                                <button class="flow-tab" id="tab-select" type="button" role="tab" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-step="1">02 Select</button>
-                                <button class="flow-tab" id="tab-verify" type="button" role="tab" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-step="2">03 Verify</button>
-                            </div>
-                            <div id="flow-visual" class="flow-visual" data-step="0" aria-hidden="true">
-                                <div id="demo-frame" class="demo-frame">
-                                    <div id="demo-bar" class="demo-bar">
-                                        <i id="demo-bar-i" class="qa-i"></i>
-                                        <i id="demo-bar-i-2" class="qa-i"></i>
-                                        <i id="demo-bar-i-3" class="qa-i"></i>
+                            <div id="walkthrough" class="walkthrough dark">
+                                <div id="walkthrough-top" class="walkthrough-top">
+                                    <div id="window-dots" class="window-dots" aria-hidden="true">
+                                        <span id="window-dots-text" class="qa-span is-active"></span>
+                                        <span id="window-dots-text-2" class="qa-span"></span>
+                                        <span id="window-dots-text-3" class="qa-span"></span>
                                     </div>
-                                    <div id="demo-body" class="demo-body">
-                                        <div id="demo-icon" class="demo-icon">
-                                            <svg class="qa-svg" id="flow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                                                <circle id="flow-register-head" class="flow-icon-part" cx="12" cy="8" r="3"/>
-                                                <path id="flow-register-body" class="flow-icon-part" d="M5 21v-3a7 7 0 0 1 14 0v3"/>
-                                            </svg>
+                                    <span id="walkthrough-top-eyebrow" class="eyebrow">WEB TEST FLOW WALKTHROUGH</span>
+                                </div>
+                                <div id="flow-tabs" class="flow-tabs" role="tablist" aria-label="Explore the test flow">
+                                    <button class="flow-tab" id="tab-register" type="button" role="tab" aria-selected="true" aria-controls="flow-panel" data-step="0">01 Register</button>
+                                    <button class="flow-tab" id="tab-select" type="button" role="tab" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-step="1">02 Select</button>
+                                    <button class="flow-tab" id="tab-verify" type="button" role="tab" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-step="2">03 Verify</button>
+                                </div>
+                                <div id="flow-visual" class="flow-visual" data-step="0" aria-hidden="true">
+                                    <div id="demo-frame" class="demo-frame">
+                                        <div id="demo-bar" class="demo-bar">
+                                            <i id="demo-bar-i" class="qa-i"></i>
+                                            <i id="demo-bar-i-2" class="qa-i"></i>
+                                            <i id="demo-bar-i-3" class="qa-i"></i>
                                         </div>
-                                        <div id="demo-fields" class="demo-fields">
-                                            <span id="demo-fields-text" class="qa-span"></span>
-                                            <span id="demo-fields-text-2" class="qa-span"></span>
-                                            <span id="demo-fields-text-3" class="qa-span"></span>
+                                        <div id="demo-body" class="demo-body">
+                                            <div id="demo-icon" class="demo-icon">
+                                                <svg class="qa-svg" id="flow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                                                    <circle id="flow-register-head" class="flow-icon-part" cx="12" cy="8" r="3"/>
+                                                    <path id="flow-register-body" class="flow-icon-part" d="M5 21v-3a7 7 0 0 1 14 0v3"/>
+                                                </svg>
+                                            </div>
+                                            <div id="demo-fields" class="demo-fields">
+                                                <span id="demo-fields-text" class="qa-span"></span>
+                                                <span id="demo-fields-text-2" class="qa-span"></span>
+                                                <span id="demo-fields-text-3" class="qa-span"></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div id="flow-journey" class="flow-journey" aria-hidden="true">
+                                    <span id="flow-journey-account" class="flow-journey-stop is-current" data-journey-step="0">Account</span>
+                                    <span id="flow-journey-connector-first" class="flow-journey-connector"></span>
+                                    <span id="flow-journey-product" class="flow-journey-stop" data-journey-step="1">Product</span>
+                                    <span id="flow-journey-connector-second" class="flow-journey-connector"></span>
+                                    <span id="flow-journey-cart" class="flow-journey-stop" data-journey-step="2">Cart</span>
+                                </div>
+                                <div class="flow-panel" id="flow-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-register">
+                                    <span class="step-number" id="step-number">STEP 01 / 03</span>
+                                    <h4 class="qa-h4" id="step-title">Start with a fresh account.</h4>
+                                    <p class="qa-p" id="step-description">Generate a unique email, complete registration, then verify the home page URL, account email, and authentication cookie.</p>
+                                    <div class="code-line" id="step-assertion">CHECK → URL · account email · auth cookie</div>
+                                </div>
+                                <p id="walkthrough-walkthrough-caption" class="walkthrough-caption"><svg id="walkthrough-walkthrough-caption-icon" class="qa-svg" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle id="walkthrough-walkthrough-caption-icon-circle" class="qa-circle" cx="8" cy="8" r="6" stroke="currentColor"/><path id="walkthrough-walkthrough-caption-icon-path" class="qa-path" d="M8 7v4M8 4.5v.5" stroke="currentColor"/></svg>Interactive explanation of the project, not a live test run.</p>
+                                <noscript id="walkthrough-noscript" class="qa-noscript">
+                                    <p id="walkthrough-noscript-walkthrough-caption" class="walkthrough-caption">Next: choose a random featured product, complete its required options, and verify its details and quantity in the cart.</p>
+                                </noscript>
                             </div>
-                            <div id="flow-journey" class="flow-journey" aria-hidden="true">
-                                <span id="flow-journey-account" class="flow-journey-stop is-current" data-journey-step="0">Account</span>
-                                <span id="flow-journey-connector-first" class="flow-journey-connector"></span>
-                                <span id="flow-journey-product" class="flow-journey-stop" data-journey-step="1">Product</span>
-                                <span id="flow-journey-connector-second" class="flow-journey-connector"></span>
-                                <span id="flow-journey-cart" class="flow-journey-stop" data-journey-step="2">Cart</span>
+                        </article>
+                        <article id="booker-project" class="project project-panel" data-walkthrough="restful-booker" aria-labelledby="booker-project-info-title">
+                            <div id="booker-project-info" class="project-info">
+                                <div id="booker-project-type" class="project-type eyebrow"><span id="booker-small-dot" class="small-dot" aria-hidden="true"></span>Public project / API automation</div>
+                                <h3 id="booker-project-info-title" class="qa-h3">Restful Booker<br id="booker-project-info-title-break" class="qa-br">Automation.</h3>
+                                <p id="booker-project-info-description" class="qa-p">A backend testing project for Restful Booker. It checks booking creation, retrieval, updates, and deletion, with authentication checks, reusable API helpers, and automatic cleanup.</p>
+                                <div id="booker-tags" class="tags" aria-label="Project technologies">
+                                    <span id="booker-tags-tag" class="tag">Jest</span>
+                                    <span id="booker-tags-tag-2" class="tag">TypeScript</span>
+                                    <span id="booker-tags-tag-3" class="tag">Axios</span>
+                                    <span id="booker-tags-tag-4" class="tag">Allure</span>
+                                </div>
+                                <a id="booker-project-repository-link" class="text-link" href="https://github.com/ItayHakim/Restful-Booker-Automation-Project" target="_blank" rel="noopener noreferrer">Explore the repository <svg id="booker-project-repository-link-arrow" class="arrow" aria-hidden="true"><use id="booker-project-repository-link-arrow-reference" class="qa-use" href="#arrow-up-right"/></svg><span id="booker-project-repository-link-sr-only" class="sr-only"> (opens in a new tab)</span></a>
                             </div>
-                            <div class="flow-panel" id="flow-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-register">
-                                <span class="step-number" id="step-number">STEP 01 / 03</span>
-                                <h4 class="qa-h4" id="step-title">Start with a fresh account.</h4>
-                                <p class="qa-p" id="step-description">Generate a unique email, complete registration, then verify the home page URL, account email, and authentication cookie.</p>
-                                <div class="code-line" id="step-assertion">CHECK → URL · account email · auth cookie</div>
+                            <div id="booker-walkthrough" class="walkthrough dark">
+                                <div id="booker-walkthrough-top" class="walkthrough-top">
+                                    <div id="booker-window-dots" class="window-dots" aria-hidden="true">
+                                        <span id="booker-window-dots-text" class="qa-span is-active"></span>
+                                        <span id="booker-window-dots-text-2" class="qa-span"></span>
+                                        <span id="booker-window-dots-text-3" class="qa-span"></span>
+                                    </div>
+                                    <span id="booker-walkthrough-top-eyebrow" class="eyebrow">API test flow walkthrough</span>
+                                </div>
+                                <div id="booker-flow-tabs" class="flow-tabs" role="tablist" aria-label="Explore the API test flow">
+                                    <button class="flow-tab" id="booker-tab-create" type="button" role="tab" aria-selected="true" aria-controls="booker-flow-panel" data-step="0">01 Create</button>
+                                    <button class="flow-tab" id="booker-tab-update" type="button" role="tab" aria-selected="false" aria-controls="booker-flow-panel" tabindex="-1" data-step="1">02 Update</button>
+                                    <button class="flow-tab" id="booker-tab-delete" type="button" role="tab" aria-selected="false" aria-controls="booker-flow-panel" tabindex="-1" data-step="2">03 Delete</button>
+                                </div>
+                                <div id="booker-flow-visual" class="flow-visual" data-step="0" aria-hidden="true">
+                                    <div id="booker-demo-frame" class="demo-frame">
+                                        <div id="booker-demo-bar" class="demo-bar">
+                                            <i id="booker-demo-bar-i" class="qa-i"></i>
+                                            <i id="booker-demo-bar-i-2" class="qa-i"></i>
+                                            <i id="booker-demo-bar-i-3" class="qa-i"></i>
+                                        </div>
+                                        <div id="booker-demo-body" class="demo-body">
+                                            <div id="booker-demo-icon" class="demo-icon">
+                                                <svg class="qa-svg" id="booker-flow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                                                    <rect id="booker-flow-create-calendar" class="flow-icon-part" x="3" y="5" width="18" height="16" rx="2"/>
+                                                    <path id="booker-flow-create-details" class="flow-icon-part" d="M16 3v4M8 3v4M3 11h18m-13 5 3 3 5-5"/>
+                                                </svg>
+                                            </div>
+                                            <div id="booker-demo-fields" class="demo-fields">
+                                                <span id="booker-demo-fields-text" class="qa-span"></span>
+                                                <span id="booker-demo-fields-text-2" class="qa-span"></span>
+                                                <span id="booker-demo-fields-text-3" class="qa-span"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="booker-flow-journey" class="flow-journey" aria-hidden="true">
+                                    <span id="booker-flow-journey-account" class="flow-journey-stop is-current" data-journey-step="0">Create</span>
+                                    <span id="booker-flow-journey-connector-first" class="flow-journey-connector"></span>
+                                    <span id="booker-flow-journey-product" class="flow-journey-stop" data-journey-step="1">Update</span>
+                                    <span id="booker-flow-journey-connector-second" class="flow-journey-connector"></span>
+                                    <span id="booker-flow-journey-cart" class="flow-journey-stop" data-journey-step="2">Delete</span>
+                                </div>
+                                <div class="flow-panel" id="booker-flow-panel" role="tabpanel" tabindex="0" aria-labelledby="booker-tab-create">
+                                    <span class="step-number" id="booker-step-number">STEP 01 / 03</span>
+                                    <h4 class="qa-h4" id="booker-step-title">Create a booking. Check what is saved.</h4>
+                                    <p class="qa-p" id="booker-step-description">Generate unique booking details, create a booking, then retrieve it by ID and compare every field with the submitted data.</p>
+                                    <div class="code-line" id="booker-step-assertion">CHECK → status 200 · booking ID · saved details</div>
+                                </div>
+                                <p id="booker-walkthrough-walkthrough-caption" class="walkthrough-caption"><svg id="booker-walkthrough-walkthrough-caption-icon" class="qa-svg" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle id="booker-walkthrough-walkthrough-caption-icon-circle" class="qa-circle" cx="8" cy="8" r="6" stroke="currentColor"/><path id="booker-walkthrough-walkthrough-caption-icon-path" class="qa-path" d="M8 7v4M8 4.5v.5" stroke="currentColor"/></svg>Interactive overview of separate API tests, not a live test run.</p>
+                                <noscript id="booker-walkthrough-noscript" class="qa-noscript">
+                                    <p id="booker-walkthrough-noscript-walkthrough-caption" class="walkthrough-caption">The suite also checks authenticated full and partial updates, deletion, and rejected access. Each saved change is verified with a follow-up request.</p>
+                                </noscript>
                             </div>
-                            <p id="walkthrough-walkthrough-caption" class="walkthrough-caption"><svg id="walkthrough-walkthrough-caption-icon" class="qa-svg" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle id="walkthrough-walkthrough-caption-icon-circle" class="qa-circle" cx="8" cy="8" r="6" stroke="currentColor"/><path id="walkthrough-walkthrough-caption-icon-path" class="qa-path" d="M8 7v4M8 4.5v.5" stroke="currentColor"/></svg>Interactive explanation of the project, not a live test run.</p>
-                            <noscript id="walkthrough-noscript" class="qa-noscript">
-                                <p id="walkthrough-noscript-walkthrough-caption" class="walkthrough-caption">Next: choose a random featured product, complete its required options, and verify its details and quantity in the cart.</p>
-                            </noscript>
-                        </div>
-                    </article>
+                        </article>
+                    </div>
                     <div id="work-bottom" class="work-bottom">
-                        <span id="work-bottom-text" class="qa-span">Reusable actions. Centralized selectors. Typed test data.</span>
+                        <span id="work-bottom-text" class="qa-span">Reusable actions. Typed test data. Clear assertions.</span>
                         <a id="work-github-link" class="text-link" href="https://github.com/ItayHakim" target="_blank" rel="noopener noreferrer">More on GitHub <svg id="work-github-link-arrow" class="arrow" aria-hidden="true"><use id="work-github-link-arrow-reference" class="qa-use" href="#arrow-up-right"/></svg><span id="work-github-link-sr-only" class="sr-only"> (opens in a new tab)</span></a>
                     </div>
                 </div>

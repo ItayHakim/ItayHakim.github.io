@@ -15,7 +15,7 @@ src/
     config/
         siteConfig.js          Screen sizes, animation timing and trail settings
     data/
-        walkthroughData.js     Text and icons for the three project steps
+        walkthroughData.js     Text and icons for each project's three steps
     scripts/
         navigation.js          Mobile menu
         projectWalkthrough.js  Project tabs and keyboard navigation
@@ -52,7 +52,8 @@ Responsive rules load last so they can override the desktop styles.
 ## Interaction and motion
 
 - The orbit's UI, API and CI bubbles and the buttons below select the same testing layer, update its description, and highlight its orbit. The bubbles keep their glass appearance and hover effect, and support Tab, Enter and Space.
-- The project walkthrough updates its illustration and journey indicator when a tab changes, with arrow-key navigation preserved.
+- Vertical bookmark tabs switch between Demo Web Shop and Restful Booker. On screens up to 900px wide, the bookmarks sit above the project card. Use Up/Down on vertical tabs, Left/Right on horizontal tabs, or Home/End to switch projects.
+- Each project has its own three-step walkthrough, illustration, and journey indicator. Left/Right and Home/End switch steps, and each project remembers its selected step when switching bookmarks. Both projects remain readable with JavaScript disabled.
 - The entire contact email row, including the address and arrow, opens a Gmail compose window in a new tab with the recipient filled in. Copy email copies the address.
 - Section reveals happen once. Navigation tracks the section being read, and the thin header line shows reading progress.
 - The 200+ end-to-end test metric counts up once when it first comes into view. Adjust its speed with `metricCountDuration` in `src/config/siteConfig.js`.
@@ -66,7 +67,7 @@ Every HTML and inline SVG element has a unique, explicit `id` and a nonempty `cl
 
 Use IDs for individual test targets, for example `#navigation-work`, `#hero-work-link`, `#contact-email`, and `#copy-email`. Keep IDs stable when changing text or rearranging content, and give new elements their own IDs and classes.
 
-JavaScript-created elements follow the same rule: walkthrough icon parts use `flow-register-*`, `flow-select-*`, or `flow-verify-*` IDs, orbit trails use `orbit-electron-{left|right|outer}-trail-{1..N}`, and the temporary clipboard field uses `#copy-email-fallback`.
+JavaScript-created elements follow the same rule: walkthrough icon parts use `flow-register-*`, `flow-select-*`, `flow-verify-*`, or `booker-flow-{create|update|delete}-*` IDs, orbit trails use `orbit-electron-{left|right|outer}-trail-{1..N}`, and the temporary clipboard field uses `#copy-email-fallback`.
 
 ## Publish
 

@@ -51,6 +51,42 @@
     }
 }
 
+@media (max-width: 900px) {
+    .project-showcase.has-project-tabs {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .project-bookmarks {
+        flex-direction: row;
+    }
+    .project-bookmark {
+        flex: 1;
+        flex-direction: row;
+        gap: 12px;
+        min-width: 0;
+        min-height: 58px;
+        padding: 16px 14px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+    .project-bookmark + .project-bookmark {
+        border-top: 0;
+        border-left: 1px solid var(--line);
+    }
+    .project-bookmark[aria-selected="true"] {
+        border-bottom-color: var(--soft);
+        box-shadow: inset 0 4px var(--lime);
+    }
+    .project-bookmark-name {
+        writing-mode: horizontal-tb;
+    }
+    .has-project-tabs > .project-panel {
+        grid-column: 1;
+        grid-row: 2;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
 @media (max-width: 800px) {
     .wrap {
         width: calc(100% - 44px);
@@ -351,6 +387,14 @@
     .project {
         grid-template-columns: 1fr;
     }
+    .project-bookmark {
+        gap: 7px;
+        padding: 14px 8px;
+        min-height: 52px;
+    }
+    .project-bookmark-name {
+        font-size: 10px;
+    }
     .project-info {
         padding: 28px 25px;
     }
@@ -535,7 +579,7 @@
 }
 
 @media print {
-    .site-header, .hero-visual, .hero-actions, .walkthrough, .copy-email, .to-top {
+    .site-header, .hero-visual, .hero-actions, .walkthrough, .copy-email, .to-top, .project-bookmarks {
         display: none !important;
     }
     body, .dark, .about-section, .contact-section {
@@ -550,8 +594,21 @@
     .section, .about-section, .contact-section {
         padding-block: 24px;
     }
-    .hero-grid, .project {
+    .hero-grid, .project, .project-showcase.has-project-tabs {
         display: block;
+    }
+    .project-showcase.has-project-tabs {
+        border: 0;
+        border-radius: 0;
+        overflow: visible;
+        background: transparent;
+    }
+    .project-panel[hidden] {
+        display: block !important;
+    }
+    .project-panel {
+        margin-bottom: 20px;
+        break-inside: avoid;
     }
     .dark p, .metric-value, .dark .job-date, .dark .job-company, .dark .metric-label, .dark .number {
         color: #333;

@@ -79,9 +79,99 @@ h2 {
     border-top: 1px solid var(--line);
 }
 
+.project-showcase {
+    display: grid;
+    gap: 24px;
+}
+
+.project-showcase.has-project-tabs {
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    overflow: hidden;
+    background: var(--soft);
+}
+
+.project-bookmarks {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.project-bookmark {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-height: 214px;
+    padding: 20px 12px;
+    margin: 0;
+    border: 0;
+    border-right: 1px solid var(--line);
+    border-radius: 0;
+    background: var(--paper);
+    color: var(--muted);
+    transition: background .2s, color .2s, box-shadow .2s;
+}
+
+.project-bookmark + .project-bookmark {
+    border-top: 1px solid var(--line);
+}
+
+.project-bookmark:focus-visible {
+    outline-offset: -6px;
+}
+
+.project-bookmark:hover {
+    background: var(--soft);
+    color: var(--ink);
+}
+
+.project-bookmark[aria-selected="true"] {
+    border-right-color: var(--soft);
+    background: var(--soft);
+    color: var(--ink);
+    box-shadow: inset 4px 0 var(--lime);
+}
+
+.project-bookmark-number {
+    font: 9px var(--mono);
+}
+
+.project-bookmark-name {
+    writing-mode: vertical-rl;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .025em;
+    white-space: nowrap;
+}
+
+.has-project-tabs > .project-panel {
+    grid-column: 2;
+    grid-row: 1;
+    border: 0;
+    border-radius: 0;
+}
+
+.project-panel {
+    min-width: 0;
+}
+
+.project-panel[role="tabpanel"]:focus-visible {
+    outline-offset: -6px;
+}
+
 .project {
     display: grid;
-    grid-template-columns: .85fr 1.15fr;
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
     border: 1px solid var(--line);
     border-radius: 24px;
     overflow: hidden;
@@ -93,6 +183,7 @@ h2 {
     flex-direction: column;
     padding: 44px;
     background: var(--soft);
+    min-width: 0;
 }
 
 .project-type {
@@ -154,6 +245,7 @@ h2 {
     background-image: radial-gradient(ellipse at 70% 0, #42633b55, transparent 65%);
     color: #edf1e9;
     padding: 32px;
+    min-width: 0;
 }
 
 .walkthrough-top {
